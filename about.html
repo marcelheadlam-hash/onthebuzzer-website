@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | On The Buzzer</title>
+<meta name="description" content="On The Buzzer was built by Marcel Headlam — someone who spent years inside corporate organisations and experienced bad formats firsthand."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "neon-pink": "#ff00ff",
+          "neon-teal": "#00ffff",
+          "neon-blue": "#0066ff",
+          "vapor-purple": "#2d004d",
+          "deep-space": "#0a001a",
+          "primary": "#ff00ff",
+          "on-primary": "#ffffff",
+          "surface": "#130026",
+          "outline": "#00ffff",
+          "terracotta": "#C4856A",
+          "peach": "#FDB699"
+        },
+        fontFamily: {
+          "headline": ["Orbitron", "sans-serif"],
+          "body": ["'Share Tech Mono'", "monospace"],
+          "mono": ["'Share Tech Mono'", "monospace"]
+        },
+        borderRadius: {
+          "DEFAULT": "4px",
+          "lg": "8px",
+          "xl": "12px",
+          "full": "9999px"
+        },
+      },
+    },
+  }
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    body { 
+      @apply font-body overflow-x-hidden;
+      background: linear-gradient(135deg, #2d004d 0%, #0a001a 50%, #001a33 100%);
+      color: #e0e0e0;
+    }
+    h1, h2, h3, h4, h5, h6 { @apply font-headline; }
+  }
+  .vaporwave-border {
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff, inset 0 0 5px #00ffff;
+  }
+  .glow-pink {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+  .glow-teal {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+  .glow-terracotta {
+    text-shadow: 0 0 10px rgba(196, 133, 106, 0.4);
+  }
+  .arcade-button {
+    @apply border-2 border-neon-pink text-neon-pink bg-transparent hover:bg-neon-pink hover:text-white transition-all duration-300;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+    text-shadow: 0 0 5px currentColor;
+  }
+  .scanline {
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.15;
+  }
+  .grid-bg {
+    background-image: linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+  }
+  .glass-panel {
+    background: rgba(45, 0, 77, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+  }
+  .arcade-shadow {
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+  }
+</style>
+</head>
+<body class="selection:bg-neon-pink selection:text-white antialiased">
+<div class="scanline fixed inset-0 z-[100] pointer-events-none"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-6 max-w-full mx-auto glass-panel border-b-2 border-neon-teal/30">
+  <a href="index.html" class="text-2xl font-black tracking-widest text-neon-teal font-headline glow-teal italic">ON THE BUZZER</a>
+  <div class="hidden md:flex gap-10">
+    <a class="font-headline font-bold uppercase tracking-widest text-xs text-white/70 hover:text-neon-pink transition-all duration-200" href="index.html">HOME</a>
+    <a class="font-headline font-bold uppercase tracking-widest text-xs text-neon-pink border-b-2 border-neon-pink pb-1" href="about.html">ABOUT US</a>
+    <a class="font-headline font-bold uppercase tracking-widest text-xs text-white/70 hover:text-neon-pink transition-all duration-200" href="contact.html">CONTACT US</a>
+  </div>
+</nav>
+
+<main class="max-w-[1400px] mx-auto border-x-2 border-neon-teal/20 min-h-screen grid-bg pt-24">
+
+  <!-- HERO -->
+  <section class="min-h-[60vh] flex flex-col justify-center items-center px-6 md:px-24 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-vapor-purple/20 pointer-events-none"></div>
+    <div class="relative z-10 max-w-5xl w-full glass-panel border-4 border-terracotta p-8 md:p-16 arcade-shadow text-center">
+      <span class="font-headline text-terracotta tracking-[0.3em] uppercase text-xs mb-8 block font-bold glow-terracotta">Our Story</span>
+      <h1 class="font-headline text-4xl md:text-6xl text-white leading-tight uppercase mb-12 italic font-black">
+        Built by Someone Who Has <span class="text-neon-pink glow-pink">Sat in Your Chair.</span>
+      </h1>
+      <p class="font-body text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto uppercase tracking-wider">Marcel Headlam spent years inside corporate organisations before he built On The Buzzer. He knows what it feels like when the format fails the room. He also knows why games — real ones, with stakes and energy — never do.</p>
+    </div>
+  </section>
+
+  <!-- MARCEL IMAGE -->
+  <section class="relative overflow-hidden border-b-2 border-neon-teal/30">
+    <img alt="Marcel Headlam hosting The Everyone Show" class="w-full object-cover" src="images/marcel-stage.jpg" style="max-height: 600px; object-position: center 20%;"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-deep-space via-transparent to-transparent pointer-events-none"></div>
+  </section>
+  <section class="py-24 px-6 md:px-24 bg-vapor-purple/20 border-b-2 border-neon-teal/30">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-7xl mx-auto">
+      <div class="lg:col-span-8">
+        <h2 class="font-headline text-3xl md:text-5xl text-neon-teal mb-12 leading-tight uppercase font-black italic glow-teal">
+          He Was Not an Entertainer. <br class="hidden md:block"/> He Was an Attendee.
+        </h2>
+        <div class="space-y-8 font-body text-lg md:text-xl text-white/70 leading-relaxed uppercase tracking-wide">
+          <p>Before On The Buzzer existed, Marcel sat through the same events most people sit through. The icebreakers nobody wanted to do. The team activities that divided rather than connected. The formats that worked brilliantly for six people and collapsed at sixty.</p>
+          <p>He was not watching from the outside. He was in the room, feeling what everyone else felt.</p>
+          <p>What struck him was not just that the formats were bad. It was that games — real ones, with competition and stakes — never had that problem. Nobody checks their phone during a penalty shootout. Nobody disengages from a buzzer going off at the wrong moment. Games have always brought people together without anyone having to be told to participate.</p>
+          <p class="text-neon-pink bg-deep-space/60 border-l-8 border-neon-pink p-6 font-bold italic glow-pink">That is where The Everyone Show came from. Not from a production company. From someone who felt the problem firsthand — and knew what already worked.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-4 p-1 vaporwave-border bg-neon-pink/10 self-stretch">
+        <img alt="Guest reacting during the show" class="w-full h-full object-cover grayscale opacity-80 mix-blend-screen" src="images/about-attendee.jpg" style="object-position: center 20%; min-height: 400px;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: What He Built -->
+  <section class="py-24 px-6 md:px-24 bg-deep-space/40 border-b-2 border-neon-pink/30">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-7xl mx-auto">
+      <div class="lg:col-span-4 order-2 lg:order-1 p-1 vaporwave-border bg-neon-pink/10 self-stretch">
+        <img alt="Guests playing table football at the event" class="w-full h-full object-cover grayscale mix-blend-screen opacity-80" src="images/about-built.jpg" style="object-position: center 30%; min-height: 400px;"/>
+      </div>
+      <div class="lg:col-span-8 order-1 lg:order-2">
+        <h2 class="font-headline text-3xl md:text-5xl text-neon-pink mb-12 leading-tight uppercase font-black italic glow-pink">
+          What He Built and Why It Works.
+        </h2>
+        <div class="space-y-8 font-body text-lg md:text-xl text-white/70 leading-relaxed uppercase tracking-wide">
+          <p>The Everyone Show is not a quiz night with better production. It is a structured competitive format designed specifically for corporate rooms — groups where seniority, tenure, and office politics are all present in the same space.</p>
+          <p>Every round was designed to neutralise those dynamics. Speed on the buzzer does not care about job title. Strategic wit is not reserved for senior leadership. The format levels the room by design, not by instruction. <span class="text-neon-teal font-black glow-teal">That is not an accident. It is the whole point.</span></p>
+          <p>Most formats assume the problem is engagement. It is not. The problem is design. When the structure is right, engagement follows automatically. You do not have to coax a room into enjoying a penalty shootout. The Everyone Show works on the same principle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-32 m-8 vaporwave-border bg-gradient-to-r from-neon-pink/20 to-neon-blue/20 relative overflow-hidden text-center rounded-none">
+    <div class="container mx-auto px-6 relative z-10">
+      <h2 class="font-headline text-4xl md:text-7xl mb-12 tracking-tighter text-white font-black leading-none uppercase italic glow-pink">
+        Tell Us Your Date. <br/> We Handle the Rest.
+      </h2>
+      <p class="font-body text-xl md:text-2xl text-neon-teal mb-16 max-w-2xl mx-auto uppercase tracking-widest glow-teal">
+        Send us your event date and group size. We respond within one working day.
+      </p>
+      <a href="contact.html" class="arcade-button px-16 py-6 font-headline font-black text-xl tracking-widest uppercase border-4 rounded-none inline-block">GET A QUOTE</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-deep-space border-t-2 border-neon-pink/30 p-16">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
+    <div>
+      <div class="text-3xl font-headline font-black text-neon-teal mb-6 uppercase tracking-widest glow-teal italic">ON THE BUZZER</div>
+      <p class="font-body text-xs uppercase text-white/40 tracking-[0.3em]">© 2025 ON THE BUZZER. AFTERGLOW LTD. COMPANY NO. 16506837.</p>
+    </div>
+    <div class="flex gap-16">
+      <a class="font-headline font-bold text-xs text-white/50 hover:text-neon-pink uppercase tracking-[0.4em] transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
+      <a class="font-headline font-bold text-xs text-white/50 hover:text-neon-pink uppercase tracking-[0.4em] transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
+    </div>
+    <div class="font-headline font-bold text-xs text-white/40 uppercase tracking-[0.3em]">Copyright 2025 ON THE BUZZER</div>
+  </div>
+</footer>
+
+</body></html>
