@@ -4,148 +4,132 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About Us | On The Buzzer</title>
 <link rel="icon" type="image/png" href="favicon.png"/>
-<meta name="description" content="On The Buzzer was built by Marcel Headlam — someone who spent years inside corporate organisations and experienced bad formats firsthand."/>
+<meta name="description" content="On The Buzzer was built by Marcel Headlam — someone who understood that real connection between people comes from real competition."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<script>
   tailwind.config = {
     theme: {
       extend: {
-        colors: {
-          "gold": "#C9A84C",
-          "gold-light": "#E8C96A",
-          "ink": "#0A0A0A",
-          "ink-muted": "#6B6B6B",
-          "surface": "#FFFFFF",
-          "surface-warm": "#F9F8F6",
-          "surface-card": "#F4F3F1",
-        },
-        fontFamily: {
-          "display": ["Playfair Display", "serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Space Grotesk", "sans-serif"],
-        },
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
       },
     },
   }
 </script>
 <style type="text/tailwindcss">
   @layer base {
-    body {
-      @apply font-body overflow-x-hidden;
-      background-color: #FFFFFF;
-      color: #0A0A0A;
-    }
-    h1, h2, h3, h4, h5, h6 { font-family: "Playfair Display", serif; }
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
   }
-  .gold-rule-v { border-left: 2px solid rgba(201,168,76,0.5); }
-  .card-border { border: 1px solid rgba(0,0,0,0.08); }
-  .gold-card-border { border: 1px solid rgba(201,168,76,0.3); }
-  .primary-button {
-    @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block;
-    background-color: #C9A84C; color: #FFFFFF; letter-spacing: 0.12em;
-  }
-  .primary-button:hover { background-color: #B8962E; }
+  .gold-rule-v { border-left:3px solid rgba(201,168,76,0.6); }
+  .card-border { border:1px solid rgba(0,0,0,0.08); }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 bg-white/95 backdrop-blur-sm" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
   <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
-  <div class="hidden md:flex gap-10">
+  <div class="hidden md:flex gap-10 items-center">
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
-    <a class="font-label text-xs font-bold uppercase tracking-widest pb-0.5 transition-all" style="color:#C9A84C; border-bottom:1px solid #C9A84C;" href="about.html">ABOUT US</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all flex items-center gap-1">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="team-building.html">Team Building</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="staff-engagement.html">Staff Engagement</a>
+      </div>
+    </div>
+    <a class="font-label text-xs font-bold uppercase tracking-widest pb-0.5" style="color:#C9A84C; border-bottom:1px solid #C9A84C;" href="about.html">ABOUT US</a>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
   </div>
   <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
   </button>
 </nav>
 <div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="staff-engagement.html">Staff Engagement</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="about.html">About Us</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
 </div>
 
-<main class="max-w-[1400px] mx-auto min-h-screen pt-24">
+<main class="max-w-[1400px] mx-auto min-h-screen pt-32">
 
   <!-- HERO -->
-  <section class="min-h-[60vh] flex flex-col justify-center items-center px-6 md:px-24 py-24 relative" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
+  <section class="flex flex-col justify-center items-center px-6 md:px-24 py-16 relative" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
     <div class="max-w-4xl w-full text-center">
       <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">Our Story</p>
-      <h1 class="font-display text-4xl md:text-6xl text-ink leading-tight mb-10 font-bold italic">
-        Built by Someone Who Has<br/>Sat in Your Chair.
-      </h1>
-      <p class="font-body text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">Marcel Headlam spent years inside corporate organisations before he built On The Buzzer. He knows what it feels like when the format fails the room. He also knows why games — real ones, with stakes and energy — never do.</p>
+      <h1 class="font-display text-4xl md:text-6xl text-ink leading-tight mb-10 font-bold italic">Built on a Simple Idea.<br/>Competition Connects People.</h1>
+      <p class="font-body text-xl text-ink-muted leading-relaxed max-w-3xl mx-auto">On The Buzzer exists because Marcel Headlam understood something most event formats miss. The fastest way to get people genuinely engaged with each other is to give them something to compete over.</p>
     </div>
   </section>
 
   <!-- MARCEL IMAGE -->
   <section class="relative overflow-hidden" style="border-bottom:1px solid rgba(0,0,0,0.07);">
-    <img alt="Marcel Headlam, Founder of On The Buzzer" class="w-full object-cover" loading="lazy" src="images/marcelsuit.jpg" style="max-height:600px; object-position:center 10%;"/>
+    <img loading="lazy" alt="Marcel Headlam, Founder of On The Buzzer" class="w-full object-cover" src="images/marcelsuit.jpg" style="max-height:600px; object-position:center 10%;"/>
     <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top,rgba(249,248,246,0.4) 0%,transparent 40%);"></div>
   </section>
 
-  <!-- SECTION 1: The Attendee -->
+  <!-- SECTION 1 -->
   <section class="py-24 px-6 md:px-24" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.07);">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start max-w-7xl mx-auto">
-      <div class="lg:col-span-8">
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Problem</p>
-        <h2 class="font-display text-3xl md:text-5xl text-ink mb-10 leading-tight font-bold italic">
-          He Was Not an Entertainer.<br/>He Was an Attendee.
-        </h2>
-        <div class="space-y-6 font-body text-lg text-ink-muted leading-relaxed">
-          <p>Before On The Buzzer existed, Marcel sat through the same events most people sit through. The icebreakers nobody wanted to do. The team activities that divided rather than connected. The formats that worked brilliantly for six people and collapsed at sixty.</p>
-          <p>He was not watching from the outside. He was in the room, feeling what everyone else felt.</p>
-          <p>What struck him was not just that the formats were bad. It was that games — real ones, with competition and stakes — never had that problem. Nobody checks their phone during a penalty shootout. Nobody disengages from a buzzer going off at the wrong moment. Games have always brought people together without anyone having to be told to participate.</p>
-          <blockquote class="font-display text-xl text-ink italic p-6" style="border-left:3px solid #C9A84C; background:#F9F8F6;">That is where The Everyone Show came from. Not from a production company. From someone who felt the problem firsthand — and knew what already worked.</blockquote>
-        </div>
-      </div>
-      <div class="lg:col-span-4 card-border self-stretch overflow-hidden">
-        <img alt="Guest reacting during the show" class="w-full h-full object-cover" loading="lazy" src="images/about-attendee.jpg" style="object-position:center 20%; min-height:400px;"/>
+    <div class="max-w-4xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Insight</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ink mb-10 leading-tight font-bold italic">Competition Is the Shortcut to Connection.</h2>
+      <div class="space-y-6 font-body text-lg text-ink-muted leading-relaxed">
+        <p>Nobody checks their phone during a penalty shootout. Nobody holds back when there is a buzzer on the table and points on the line. Competition removes the social friction that makes most corporate events feel forced.</p>
+        <p>When people are competing, they stop performing. They react honestly. They celebrate together, commiserate together, and argue over answers together. Those are the moments that build real relationships — and they happen naturally, without any facilitation required.</p>
+        <p>Marcel built The Everyone Show around this principle. Give people a reason to compete and connection follows automatically. That is the foundation of everything On The Buzzer does.</p>
+        <blockquote class="font-display text-xl text-ink italic p-6" style="border-left:3px solid #C9A84C; background:#F9F8F6;">The format does not manufacture connection. It creates the conditions for it to happen on its own.</blockquote>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: What He Built -->
+  <!-- SECTION 2 -->
   <section class="py-24 px-6 md:px-24" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start max-w-7xl mx-auto">
-      <div class="lg:col-span-4 order-2 lg:order-1 card-border self-stretch overflow-hidden">
-        <img alt="Guests playing table football at the event" class="w-full h-full object-cover" loading="lazy" src="images/about-built.jpg" style="object-position:center 30%; min-height:400px;"/>
+    <div class="max-w-4xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Format</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ink mb-10 leading-tight font-bold italic">The Format Does the Work.</h2>
+      <div class="space-y-6 font-body text-lg text-ink-muted leading-relaxed">
+        <p>The Everyone Show is a structured competitive format built specifically for corporate groups. Every round is designed to create a different kind of pressure — speed, strategy, risk, consensus — and each one surfaces something different about the people in the room.</p>
+        <p>Speed on the buzzer does not care about job title. Strategic wit is not reserved for senior leadership. The competition is genuinely open and the outcomes are genuinely unpredictable. That is what makes the energy real.</p>
+        <p>Two products are built on this format. Team Building uses it to create meaningful interactions and lasting connections. Staff Engagement uses it to generate energy, celebration, and a night people enjoy. The format is the same. The experience is shaped around what your event needs.</p>
+        <p>The result is an event that feels effortless to the people in the room and completely managed for the person who booked it. The format handles everything — and the energy it creates is genuine, not manufactured.</p>
       </div>
-      <div class="lg:col-span-8 order-1 lg:order-2">
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Solution</p>
-        <h2 class="font-display text-3xl md:text-5xl text-ink mb-10 leading-tight font-bold italic">
-          The Format Does the Work.
-        </h2>
-        <div class="space-y-6 font-body text-lg text-ink-muted leading-relaxed">
-          <p>The Everyone Show is not a quiz night with better production. It is a structured competitive format designed specifically for corporate rooms — groups where seniority, tenure, and office politics are all present in the same space.</p>
-          <p>Every round was designed to neutralise those dynamics. Speed on the buzzer does not care about job title. Strategic wit is not reserved for senior leadership. The format levels the room by design, not by instruction. <span class="font-semibold text-ink">That is not an accident. It is the whole point.</span></p>
-          <p>Most formats assume the problem is engagement. It is not. The problem is design. When the structure is right, engagement follows automatically. You do not have to coax a room into enjoying a penalty shootout. The Everyone Show works on the same principle.</p>
-          <p>The result is an event that feels effortless to the people in the room and completely managed for the person who booked it. No facilitation required. No awkward moments to navigate. The format handles everything — and the energy it creates is genuine, not manufactured.</p>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="py-14 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.07);">
+    <p class="font-label text-xs uppercase text-center mb-10 tracking-[0.3em] text-ink-muted">Trusted by 20+ organisations that cannot afford to get it wrong, including:</p>
+    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+      <div class="font-label text-2xl md:text-3xl font-bold text-ink/50 hover:text-ink transition-colors tracking-widest uppercase">CROWN ESTATE</div>
+      <div class="font-label text-2xl md:text-3xl font-bold text-ink/50 hover:text-ink transition-colors tracking-widest uppercase">NHS</div>
+      <div class="font-label text-2xl md:text-3xl font-bold text-ink/50 hover:text-ink transition-colors tracking-widest uppercase">MYO PICCADILLY</div>
+      <div class="font-label text-2xl md:text-3xl font-bold text-ink/50 hover:text-ink transition-colors tracking-widest uppercase">UNI OF ESSEX</div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
-  <section class="py-28 text-center px-6" style="background:#C9A84C;">
+  <section class="py-28 text-center px-6" style="background:#0D1B2A;">
     <div class="container mx-auto max-w-3xl">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(255,255,255,0.7);">Get In Touch</p>
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Get In Touch</p>
       <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">Tell Us Your Date.<br/>We Handle the Rest.</h2>
-      <p class="font-body text-xl mb-12" style="color:rgba(255,255,255,0.8);">Send us your event date and group size. We respond within one working day.</p>
-      <a href="contact.html" class="font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block px-16 py-5 text-sm" style="background:#0A0A0A; color:#FFFFFF;">GET A QUOTE</a>
+      <p class="font-body text-xl mb-12 text-white/60">Send us your event date and group size. We respond within one working day.</p>
+      <a href="contact.html" class="primary-button px-16 py-5 text-sm">GET A QUOTE</a>
     </div>
   </section>
 
 </main>
 
 <!-- FOOTER -->
-<footer class="p-16" style="background:#0A0A0A; border-top:1px solid rgba(201,168,76,0.15);">
+<footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
   <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
     <div>
       <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>

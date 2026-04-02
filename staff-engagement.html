@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Engagement | On The Buzzer</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<meta name="description" content="On The Buzzer Staff Engagement — a high-energy TV-style gameshow with gaming stations and resident DJ included. Built for celebration and reward. From £1,750 + VAT."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
+      },
+    },
+  }
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
+  }
+  .gold-rule-v { border-left:2px solid rgba(201,168,76,0.6); }
+  .card-border { border:1px solid rgba(0,0,0,0.08); }
+  .gold-card-border { border:1px solid rgba(201,168,76,0.35); }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
+  <div class="hidden md:flex gap-10 items-center">
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest pb-0.5 flex items-center gap-1" style="color:#C9A84C; border-bottom:1px solid #C9A84C;">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="team-building.html">Team Building</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 hover:bg-surface-warm transition-all" style="color:#C9A84C; border-top:1px solid rgba(0,0,0,0.06);" href="staff-engagement.html">Staff Engagement</a>
+      </div>
+    </div>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
+  </div>
+  <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+  </button>
+</nav>
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="staff-engagement.html">Staff Engagement</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
+</div>
+
+<div class="max-w-[1400px] mx-auto min-h-screen">
+
+  <!-- HERO -->
+  <section class="relative min-h-[80vh] flex flex-col justify-end overflow-hidden px-6 pb-24 pt-24">
+    <div class="absolute inset-0 pointer-events-none">
+      <img alt="Staff engagement gameshow setup with live scoring" class="w-full h-full object-cover" src="images/operation-setup.jpg" style="object-position:center 30%;"/>
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.2) 100%);"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">For Events</p>
+      <h1 class="font-display text-5xl md:text-7xl text-white leading-tight font-bold italic mb-8">Staff Engagement</h1>
+      <p class="font-body text-xl md:text-2xl text-white/80 mb-6 max-w-2xl font-light leading-relaxed" style="border-top:1px solid rgba(201,168,76,0.5); border-bottom:1px solid rgba(201,168,76,0.5); padding:1.5rem 0;">A high-energy TV-style gameshow built for celebration and reward. Gaming stations. Resident DJ. A full evening your team will still be talking about on Monday.</p>
+      <p class="font-label text-xs uppercase tracking-widest mb-8" style="color:rgba(201,168,76,0.8);">We typically book 4–6 weeks in advance. Popular dates fill quickly.</p>
+      <a href="contact.html" class="primary-button px-12 py-5 text-sm">GET A QUOTE</a>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="py-16 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="container mx-auto grid md:grid-cols-2 gap-20 items-start max-w-7xl">
+      <div class="space-y-4">
+        <p class="font-label text-xs uppercase tracking-[0.25em]" style="color:#C9A84C;">What It Is</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink leading-tight font-bold">A Full Evening That Feels Like Television.</h2>
+        <div class="font-body text-ink-muted leading-relaxed text-lg gold-rule-v pl-6 space-y-4">
+          <p>Staff Engagement is built for the events where the priority is energy, celebration, and reward. The show delivers a TV-style gameshow centrepiece — live scoring, buzzers, a professional host in full command of the room — and the gaming stations and resident DJ keep the atmosphere alive from arrival to end of night.</p>
+          <p>Everything is professionally managed. The format handles the energy. You handle nothing.</p>
+        </div>
+        <div class="p-8 mt-6" style="background:#F9F8F6; border-left:3px solid #C9A84C;">
+          <p class="font-label text-xs uppercase tracking-widest mb-3" style="color:#C9A84C;">What Your Team Leaves With</p>
+          <p class="font-body text-ink text-base leading-relaxed">Your team leaves having competed, celebrated, and spent an evening together that felt genuinely produced — not thrown together. The show creates the moments. The gaming stations sustain them. People leave talking about specific answers, specific rounds, and specific team moments.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(201,168,76,0.25); overflow:hidden; max-height:600px;">
+        <img loading="lazy" alt="Guests competing during the gameshow" class="w-full object-cover" src="images/tce-20.jpg" style="object-position:center 30%; height:600px;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIX ROUNDS -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-6">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">The Show</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold mb-4">Three Rounds. One Winner.</h2>
+      </div>
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <p class="font-body text-lg text-ink-muted">Every show is built around three rounds, each designed to create a different kind of pressure and a different kind of moment.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">01</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Speed Trivia</h4>
+          <div class="font-body text-sm text-ink-muted leading-relaxed space-y-3">
+            <p>One player. One shot at each question. The clock keeps running.</p>
+            <p>Answer correctly and the next question comes immediately — but get one wrong and your turn is over. The next team steps up and tries to beat your score.</p>
+            <p>No conferring, no second chances, no safety net. The pressure is individual. The reaction from the room is not.</p>
+          </div>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">02</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">The Decider</h4>
+          <div class="font-body text-sm text-ink-muted leading-relaxed space-y-3">
+            <p>The wheel spins to set the stakes — nobody knows what is on the line until it stops.</p>
+            <p>Then the host picks two players to go head to head on the buzzer. First to answer correctly takes the points, multiplied by whatever the wheel landed on.</p>
+            <p>One question, one duel, one winner. The rest of the room watches.</p>
+          </div>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">03</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Trivia Bingo</h4>
+          <div class="font-body text-sm text-ink-muted leading-relaxed space-y-3">
+            <p>Every player gets their own bingo card filled with answers. Questions are called and players mark off matches.</p>
+            <p>First to complete a line shouts bingo and takes the points.</p>
+            <p>It is familiar enough that nobody needs explaining, competitive enough that everyone is engaged, and the moment someone wins is always a crowd moment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE BUZZER -->
+  <section class="py-24 px-6 relative overflow-hidden" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="container mx-auto relative z-10">
+      <div class="mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Included with Staff Engagement</p>
+        <h2 class="font-display text-4xl md:text-6xl text-ink font-bold mb-4">Beyond the Buzzer</h2>
+        <p class="font-body text-lg text-ink max-w-xl">High-end gaming stations run alongside your event — before the show, during intervals, and after. Keep the energy consistent from arrival to close.</p>
+      </div>
+
+      <!-- GAMING STATIONS GRID -->
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-3 mb-16">
+        <div class="card-border flex flex-col items-center justify-center p-4 bg-white">
+          <span class="material-symbols-outlined text-3xl mb-2" style="color:#C9A84C;">golf_course</span>
+          <span class="font-label text-[10px] text-ink font-bold uppercase tracking-widest text-center">Mini Golf</span>
+        </div>
+        <div class="card-border flex flex-col items-center justify-center p-4 bg-white">
+          <span class="material-symbols-outlined text-3xl mb-2" style="color:#C9A84C;">sports_hockey</span>
+          <span class="font-label text-[10px] text-ink font-bold uppercase tracking-widest text-center">Air Hockey</span>
+        </div>
+        <div class="card-border flex flex-col items-center justify-center p-4 bg-white">
+          <span class="material-symbols-outlined text-3xl mb-2" style="color:#C9A84C;">sports_soccer</span>
+          <span class="font-label text-[10px] text-ink font-bold uppercase tracking-widest text-center">Table Football</span>
+        </div>
+        <div class="card-border flex flex-col items-center justify-center p-4 bg-white">
+          <span class="material-symbols-outlined text-3xl mb-2" style="color:#C9A84C;">joystick</span>
+          <span class="font-label text-[10px] text-ink font-bold uppercase tracking-widest text-center">Nintendo Switch</span>
+        </div>
+        <div class="card-border flex flex-col items-center justify-center p-4 bg-white">
+          <span class="material-symbols-outlined text-3xl mb-2" style="color:#C9A84C;">align_items_stretch</span>
+          <span class="font-label text-[10px] text-ink font-bold uppercase tracking-widest text-center">Giant Jenga</span>
+        </div>
+        <div class="card-border flex flex-col items-center justify-center p-4 bg-white">
+          <span class="material-symbols-outlined text-3xl mb-2" style="color:#C9A84C;">target</span>
+          <span class="font-label text-[10px] text-ink font-bold uppercase tracking-widest text-center">Cornhole</span>
+        </div>
+      </div>
+
+      <!-- FULL ROOM PHOTO -->
+      <div style="border:1px solid rgba(201,168,76,0.25); overflow:hidden; max-height:400px;">
+        <img loading="lazy" alt="Table football gaming station" class="w-full object-cover" src="images/table-football.jpg" style="object-position:center 50%; max-height:400px;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS INCLUDED -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Every Booking</p>
+        <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">What Is Included</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">record_voice_over</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Professional Host and Co-Host</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">Two experienced facilitators who control the energy, manage the pace, and ensure nothing is left to chance.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">electric_bolt</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Licensed Buzzers and Live Scoring</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">Broadcast-quality technology. Every answer tracked live. Every score displayed in real time on screen.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">layers</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Content Tailored to Your Group</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">We take a brief before the event. You do not receive a generic format.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">settings_input_component</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Full Setup and Breakdown</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">We arrive, build it, run it, and pack it down. Nothing is required from you or your team on the day.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">sports_esports</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Gaming Stations</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">High-end gaming stations set up alongside your event. Run them before the show, during intervals, or after to keep the energy going all night.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">music_note</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Resident DJ</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">A professional DJ who sets the atmosphere from arrival, fills the gaps between rounds, and keeps the energy alive through to the end of the night.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Investment</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold">Staff Engagement Pricing</h2>
+        <p class="font-body text-ink-muted mt-4">All prices exclusive of VAT. Every package includes professional hosting, buzzers, live scoring, tailored content, gaming stations, resident DJ, and full setup.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">20–50 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£1,750</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Ideal for team socials, away days, and smaller corporate groups.</p>
+        </div>
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">50–100 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£2,250</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Department events, client entertainment, and office parties.</p>
+        </div>
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">100–200 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£3,000</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Conference socials, large team events, and multi-department gatherings.</p>
+        </div>
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">200–300 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£3,750</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Full-scale company events, award nights, and large venue activations.</p>
+        </div>
+      </div>
+      <p class="font-body text-xs text-ink-muted text-center mt-6">Groups under 20 quoted on a case-by-case basis.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="text-center mb-16">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">What Clients Say</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="p-10 flex flex-col justify-between card-border bg-white">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"We needed something that would bring together staff from completely different departments who rarely interact. The energy in the room was something I have not seen at any of our previous events."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">LH</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Leanne Headlam</p>
+            <p class="font-body text-xs text-ink-muted">Community Lead — NHS</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-10 flex flex-col justify-between card-border bg-white">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"Our team works in high-pressure environments every day. This was the first event where I watched them properly switch off and enjoy themselves. People are still talking about it two months later."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">SP</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Shannen Prempeh</p>
+            <p class="font-body text-xs text-ink-muted">Founder — HB Forces</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Common Questions</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-0">
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How long does the evening run?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">The show itself runs approximately 90 minutes. Gaming stations can run before and after for as long as you need. A typical Staff Engagement evening runs three to four hours in total, including arrival, the show, and post-show gaming time.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">What does the venue need to provide?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">A screen or projector, power sources, and enough floor space for the gaming stations and team tables. We bring everything else — all equipment, buzzers, laptop, speakers, and content. For DJ bookings, a reasonable acoustic space and a power source are all that is needed.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">Can we choose the music for the DJ?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">Yes. We take a brief before the event covering preferred genres, any tracks you want included, and anything you want to avoid. The DJ is fully briefed on the tone and format of the evening before arrival.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">Can we have gaming stations without the show?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">No. Gaming stations and the DJ are included as part of the full Staff Engagement package. The show is always the centrepiece, and the gaming stations and DJ run alongside it to create the complete evening experience.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How far in advance should we book?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">We recommend 4–6 weeks. For larger groups of 100 or more, 8 weeks gives us enough time to prepare the right content. November and December dates fill fastest — if you are planning a Christmas party, get in touch as early as possible.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">What is a typical total cost for a Staff Engagement evening?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">Gaming stations and a resident DJ are included in every Staff Engagement package. A group of 60 people would cost £2,250 + VAT — everything included. Every booking is quoted individually — send us your date and group size and we will confirm the exact figure within one working day.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-0" style="height:500px;">
+    <div class="overflow-hidden h-full">
+      <img loading="lazy" alt="Guest playing air hockey at gaming station" class="w-full h-full object-cover" src="images/beyond-buzzer.jpg"/>
+    </div>
+    <div class="overflow-hidden h-full">
+      <img loading="lazy" alt="Guests reacting during the event" class="w-full h-full object-cover" src="images/about-built.jpg"/>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-28 text-center px-6" style="background:#0D1B2A;">
+    <div class="container mx-auto max-w-3xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Book Staff Engagement</p>
+      <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">Tell Us Your Date.<br/>We Handle the Rest.</h2>
+      <p class="font-body text-xl mb-4 text-white/60">Send us your event date and group size. We respond within one working day.</p>
+      <p class="font-label text-xs uppercase tracking-widest mb-12" style="color:rgba(201,168,76,0.6);">We typically book 4–6 weeks in advance. Popular dates fill quickly.</p>
+      <a href="contact.html" class="primary-button px-16 py-5 text-sm">GET A QUOTE</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
+      <div>
+        <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>
+        <p class="font-body text-xs text-white/30 tracking-wider">© 2026 On The Buzzer. Afterglow Ltd. Company No. 16506837.</p>
+      </div>
+      <div class="flex gap-12">
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
+      </div>
+      <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
+    </div>
+  </footer>
+
+</div>
+</body></html>

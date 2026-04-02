@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team Building | On The Buzzer</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<meta name="description" content="On The Buzzer Team Building — a curated gameshow experience designed to build trust, encourage collaboration, and create genuine connection. From £1,000 + VAT."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
+      },
+    },
+  }
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
+  }
+  .gold-rule-v { border-left:2px solid rgba(201,168,76,0.6); }
+  .card-border { border:1px solid rgba(0,0,0,0.08); }
+  .gold-card-border { border:1px solid rgba(201,168,76,0.35); }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .outline-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block bg-transparent; border:1px solid rgba(201,168,76,0.7); color:#C9A84C; }
+  .outline-button:hover { border-color:#C9A84C; background:rgba(201,168,76,0.06); }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
+  <div class="hidden md:flex gap-10 items-center">
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest pb-0.5 flex items-center gap-1" style="color:#C9A84C; border-bottom:1px solid #C9A84C;">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink hover:bg-surface-warm transition-all" style="color:#C9A84C;" href="team-building.html">Team Building</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="staff-engagement.html">Staff Engagement</a>
+      </div>
+    </div>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
+  </div>
+  <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+  </button>
+</nav>
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="team-building.html">Team Building</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="staff-engagement.html">Staff Engagement</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
+</div>
+
+<div class="max-w-[1400px] mx-auto min-h-screen">
+
+  <!-- HERO -->
+  <section class="relative min-h-[80vh] flex flex-col justify-end overflow-hidden px-6 pb-24 pt-24">
+    <div class="absolute inset-0 pointer-events-none">
+      <img alt="Team building gameshow with buzzers and live competition" class="w-full h-full object-cover" src="images/why-gameshow.jpg" style="object-position:center 40%;"/>
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.2) 100%);"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">For Teams</p>
+      <h1 class="font-display text-5xl md:text-7xl text-white leading-tight font-bold italic mb-8">Team Building</h1>
+      <p class="font-body text-xl md:text-2xl text-white/80 mb-6 max-w-2xl font-light leading-relaxed" style="border-top:1px solid rgba(201,168,76,0.5); border-bottom:1px solid rgba(201,168,76,0.5); padding:1.5rem 0;">A curated gameshow experience designed to build trust, encourage collaboration, and create genuine connection across your team.</p>
+      <p class="font-label text-xs uppercase tracking-widest mb-8" style="color:rgba(201,168,76,0.8);">We typically book 4–6 weeks in advance. Popular dates fill quickly.</p>
+      <a href="contact.html" class="primary-button px-12 py-5 text-sm">GET A QUOTE</a>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="container mx-auto grid md:grid-cols-2 gap-20 items-start max-w-7xl">
+      <div class="space-y-6">
+        <p class="font-label text-xs uppercase tracking-[0.25em]" style="color:#C9A84C;">What It Is</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink leading-tight font-bold">The Show That Surfaces What Makes Your Team Tick.</h2>
+        <div class="font-body text-ink-muted leading-relaxed text-lg gold-rule-v pl-6 space-y-4">
+          <p>Team Building uses the competitive energy of The Everyone Show to create interactions that carry real weight. Every round is specifically chosen to develop a team skill — trust, collaboration, or strategic thinking — while keeping the energy high and the experience genuinely enjoyable.</p>
+          <p>The competition is the mechanism. The connection is the outcome. Both happen naturally, without anyone having to be told to participate.</p>
+        </div>
+        <div class="p-8 mt-6" style="background:#F9F8F6; border-left:3px solid #C9A84C;">
+          <p class="font-label text-xs uppercase tracking-widest mb-3" style="color:#C9A84C;">What Your Team Leaves With</p>
+          <p class="font-body text-ink text-base leading-relaxed">Teams leave having competed, collaborated, and learned something about each other they did not know before. The conversations that start during the show tend to continue long after it ends.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(201,168,76,0.25); overflow:hidden; max-height:650px;">
+        <img loading="lazy" alt="Guests focused on buzzers during the show" class="w-full object-cover" src="images/about-attendee.jpg" style="height:650px; object-position:center 20%;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIX ROUNDS - ALL CURATED FOR TEAM BUILDING -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-6">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">The Format</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold mb-4">Six Rounds. All Curated for Team Building.</h2>
+      </div>
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <p class="font-body text-lg text-ink-muted">Every round in our library is designed around a specific team skill. We select the three that best match your group's objectives. Tell us about your team and we will advise which combination works hardest for you.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+
+        <!-- RECOMMENDED THREE -->
+        <div class="p-8 card-border relative" style="background:#FFFFFF;">
+          <span class="absolute top-4 right-4 font-label text-[9px] uppercase tracking-widest px-2 py-1" style="background:#C9A84C; color:#FFFFFF;">Recommended</span>
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">Delegation</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-2">Delegation</h4>
+          <p class="font-label text-[10px] uppercase tracking-widest mb-3 text-ink-muted">Develops: Trust</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">One person speaks for the whole team. Who do you trust under pressure? This round reveals the answer — and often surprises people.</p>
+        </div>
+
+        <div class="p-8 card-border relative" style="background:#FFFFFF;">
+          <span class="absolute top-4 right-4 font-label text-[9px] uppercase tracking-widest px-2 py-1" style="background:#C9A84C; color:#FFFFFF;">Recommended</span>
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">The Collective</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-2">The Collective</h4>
+          <p class="font-label text-[10px] uppercase tracking-widest mb-3 text-ink-muted">Develops: Collaboration</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Every team member must agree before an answer is submitted. Consensus under pressure — reveals how your team makes decisions together.</p>
+        </div>
+
+        <div class="p-8 card-border relative" style="background:#FFFFFF;">
+          <span class="absolute top-4 right-4 font-label text-[9px] uppercase tracking-widest px-2 py-1" style="background:#C9A84C; color:#FFFFFF;">Recommended</span>
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">The Wager</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-2">The Wager</h4>
+          <p class="font-label text-[10px] uppercase tracking-widest mb-3 text-ink-muted">Develops: Risk Management</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Stake your accumulated points on a single answer. Go big and close the gap — or hand the game to your opponents. Exposes how your team manages risk.</p>
+        </div>
+
+        <!-- OPTIONAL THREE -->
+        <div class="p-8 card-border" style="background:#FAFAFA;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">The Sprint</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-2">The Sprint</h4>
+          <p class="font-label text-[10px] uppercase tracking-widest mb-3 text-ink-muted">Develops: Decision Making Under Pressure</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">First to the buzzer answers. No conferring, no second chances. Sets the competitive tone and gets everyone immediately involved.</p>
+        </div>
+
+        <div class="p-8 card-border" style="background:#FAFAFA;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">The Consensus</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-2">The Consensus</h4>
+          <p class="font-label text-[10px] uppercase tracking-widest mb-3 text-ink-muted">Develops: Emotional Intelligence</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Predict what the majority of the room will say. Strategy over knowledge. Reading people is the skill — ideal for mixed-seniority groups.</p>
+        </div>
+
+        <div class="p-8 card-border" style="background:#FAFAFA;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">The Board</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-2">The Board</h4>
+          <p class="font-label text-[10px] uppercase tracking-widest mb-3 text-ink-muted">Develops: Competitive Strategy</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">The finale. Teams predict the most popular survey answers. One wrong call changes everything. Builds strategic thinking under competitive pressure.</p>
+        </div>
+
+      </div>
+      <p class="font-body text-sm text-ink-muted text-center">Gold badges indicate our three recommended rounds for Team Building. Tell us about your group and we will confirm which combination works best.</p>
+    </div>
+  </section>
+
+  <!-- SOFTWARE SCREENSHOT -->
+  <section class="relative overflow-hidden" style="border-bottom:1px solid rgba(0,0,0,0.06);">
+    <img loading="lazy" alt="Networking at event" class="w-full object-cover" src="images/networking1.jpg" style="max-height:400px; object-position:center 30%;"/>
+  </section>
+
+  <!-- WHAT IS INCLUDED -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Every Booking</p>
+        <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">What Is Included</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">record_voice_over</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Professional Host and Co-Host</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">Two experienced facilitators who control the energy, manage the pace, and ensure nothing is left to chance.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">electric_bolt</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Licensed Buzzers and Live Scoring</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">Broadcast-quality technology that makes the format feel like television, not a pub quiz.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">layers</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Content Tailored to Your Group</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">We take a brief before the event. You do not receive a generic format.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">settings_input_component</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Full Setup and Breakdown</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">We arrive, build it, run it, and pack it down. Nothing is required from you or your team on the day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Investment</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold">Team Building Pricing</h2>
+        <p class="font-body text-ink-muted mt-4">All prices exclusive of VAT. Every package includes professional hosting, buzzers, live scoring, tailored content, and full setup.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">20–50 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£1,000</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Ideal for team socials, away days, and smaller corporate groups.</p>
+        </div>
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">50–100 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£1,500</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Department events, client entertainment, and office parties.</p>
+        </div>
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">100–200 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£2,000</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Conference socials, large team events, and multi-department gatherings.</p>
+        </div>
+        <div class="p-10 gold-card-border text-center">
+          <p class="font-label text-xs uppercase tracking-[0.2em] mb-3 text-ink-muted">200–300 Guests</p>
+          <p class="font-display text-5xl font-bold mb-2" style="color:#C9A84C;">£2,500</p>
+          <p class="font-label text-xs text-ink-muted uppercase tracking-widest mb-4">+ VAT</p>
+          <p class="font-body text-sm text-ink-muted">Full-scale company events, award nights, and large venue activations.</p>
+        </div>
+      </div>
+      <p class="font-body text-xs text-ink-muted text-center mt-6">Groups under 20 are quoted on a case-by-case basis.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="text-center mb-16">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">What Clients Say</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div class="p-10 flex flex-col justify-between card-border bg-white">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"The most engaged our team has been in years. The competitive energy was electric and the hosting was top-tier."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">RC</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Rob Cooke</p>
+            <p class="font-body text-xs text-ink-muted">Events Director — Crown Estate</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-10 flex flex-col justify-between card-border bg-white">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"A truly fair format that brought out the best in everyone. We are already planning our next session."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">AS</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Aroob Sajjid</p>
+            <p class="font-body text-xs text-ink-muted">Membership Experience Executive — MYO Piccadilly</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-10 flex flex-col justify-between card-border bg-white">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"Professional, high-energy, and perfectly executed. The buzzers completely changed the dynamic."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">TW</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Tariq Williams</p>
+            <p class="font-body text-xs text-ink-muted">Founder — Arkhiventeros</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Common Questions</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-0">
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How long does a Team Building session run?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">The standard format runs 90 minutes. If you need it integrated into a conference agenda or a tighter schedule, we can adapt the format. Let us know your timing and we will make it work.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">What does the venue need to provide?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">A screen or projector, a power source, and enough space for teams of four to six people seated at tables. We bring everything else — buzzers, laptop, scoring system, and all content.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How far in advance do we need to book?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">We recommend booking 4–6 weeks ahead. Popular dates — particularly Fridays and the months of November and December — fill quickly. If your date is soon, contact us and we will confirm availability within 24 hours.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">Can the rounds be tailored to our industry or company?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">Yes. We take a brief before every event. If there are topics relevant to your team, department, or culture that you want woven into the content, tell us and we will build them in.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How do you choose which three rounds to run?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">We ask you about your team — size, how well they know each other, any dynamics we should be aware of, and what you want them to leave with. We then select the three rounds that will deliver the strongest outcome for that specific group.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">Is there a minimum group size?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">The standard minimum is 20 people. Groups under 20 are quoted on a case-by-case basis — the format still works well, the pricing just reflects the fixed costs involved.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-0" style="height:500px;">
+    <div class="overflow-hidden h-full">
+      <img loading="lazy" alt="Guests at games night event" class="w-full h-full object-cover" src="images/tb-gameboard.jpg"/>
+    </div>
+    <div class="overflow-hidden h-full">
+      <img loading="lazy" alt="Table football gaming station" class="w-full h-full object-cover" src="images/table-football 2.jpg"/>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-28 text-center px-6" style="background:#0D1B2A;">
+    <div class="container mx-auto max-w-3xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Book Team Building</p>
+      <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">Tell Us Your Date.<br/>We Handle the Rest.</h2>
+      <p class="font-body text-xl mb-4 text-white/60">Send us your event date and group size. We respond within one working day.</p>
+      <p class="font-label text-xs uppercase tracking-widest mb-12" style="color:rgba(201,168,76,0.6);">We typically book 4–6 weeks in advance. Popular dates fill quickly.</p>
+      <a href="contact.html" class="primary-button px-16 py-5 text-sm">GET A QUOTE</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
+      <div>
+        <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>
+        <p class="font-body text-xs text-white/30 tracking-wider">© 2026 On The Buzzer. Afterglow Ltd. Company No. 16506837.</p>
+      </div>
+      <div class="flex gap-12">
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
+      </div>
+      <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
+    </div>
+  </footer>
+
+</div>
+</body></html>

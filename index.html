@@ -4,76 +4,62 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Home | On The Buzzer</title>
 <link rel="icon" type="image/png" href="favicon.png"/>
-<meta name="description" content="On The Buzzer delivers a professionally hosted corporate gameshow for 20–300 people, anywhere in the UK. Fully managed. From £1,000 + VAT."/>
+<meta name="description" content="On The Buzzer delivers professionally hosted corporate gameshow experiences for 20–300 people, anywhere in the UK. Team Building and Staff Engagement packages available."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<script>
   tailwind.config = {
     theme: {
       extend: {
-        colors: {
-          "gold": "#C9A84C",
-          "gold-light": "#E8C96A",
-          "ink": "#0A0A0A",
-          "ink-muted": "#6B6B6B",
-          "surface": "#FFFFFF",
-          "surface-warm": "#F9F8F6",
-          "surface-card": "#F4F3F1",
-        },
-        fontFamily: {
-          "display": ["Playfair Display", "serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Space Grotesk", "sans-serif"],
-        },
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
       },
     },
   }
 </script>
 <style type="text/tailwindcss">
   @layer base {
-    body {
-      @apply font-body overflow-x-hidden;
-      background-color: #FFFFFF;
-      color: #0A0A0A;
-    }
-    h1, h2, h3, h4, h5, h6 { font-family: "Playfair Display", serif; }
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
   }
-  .gold-rule { border-bottom: 1px solid rgba(201,168,76,0.4); }
-  .gold-rule-v { border-left: 2px solid rgba(201,168,76,0.6); }
-  .stat-divider { @apply w-px h-10 hidden md:block; background: rgba(201,168,76,0.3); }
-  .primary-button {
-    @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block;
-    background-color: #C9A84C; color: #FFFFFF; letter-spacing: 0.12em;
-  }
-  .primary-button:hover { background-color: #B8962E; }
-  .outline-button {
-    @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block bg-transparent;
-    border: 1px solid rgba(201,168,76,0.7); color: #C9A84C; letter-spacing: 0.12em;
-  }
-  .outline-button:hover { border-color: #C9A84C; background: rgba(201,168,76,0.06); }
-  .card-border { border: 1px solid rgba(0,0,0,0.08); }
-  .gold-card-border { border: 1px solid rgba(201,168,76,0.3); }
+  .gold-rule-v { border-left:2px solid rgba(201,168,76,0.6); }
+  .stat-divider { @apply w-px h-10 hidden md:block; background:rgba(201,168,76,0.3); }
+  .card-border { border:1px solid rgba(0,0,0,0.08); }
+  .gold-card-border { border:1px solid rgba(201,168,76,0.35); }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .outline-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block bg-transparent; border:1px solid rgba(201,168,76,0.7); color:#C9A84C; }
+  .outline-button:hover { border-color:#C9A84C; background:rgba(201,168,76,0.06); }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
 </style>
 </head>
-<body>
+<body class="selection:bg-gold selection:text-white">
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 bg-white/95 backdrop-blur-sm" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
   <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
-  <div class="hidden md:flex gap-10">
-    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink border-b pb-0.5 transition-all" style="border-color:#C9A84C; color:#C9A84C;" href="index.html">HOME</a>
+  <div class="hidden md:flex gap-10 items-center">
+    <a class="font-label text-xs font-bold uppercase tracking-widest pb-0.5" style="color:#C9A84C; border-bottom:1px solid #C9A84C;" href="index.html">HOME</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all flex items-center gap-1">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="team-building.html">Team Building</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="staff-engagement.html">Staff Engagement</a>
+      </div>
+    </div>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
   </div>
   <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
   </button>
 </nav>
 <div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
   <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="staff-engagement.html">Staff Engagement</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
 </div>
@@ -83,7 +69,7 @@
   <!-- HERO -->
   <section class="relative min-h-screen flex flex-col justify-between pt-24 overflow-hidden px-6 pb-24">
     <div class="absolute inset-0 pointer-events-none">
-      <img alt="" class="w-full h-full object-cover" src="images/hero-homepage.jpg" style="object-position:center 15%;"/>
+      <img alt="On The Buzzer corporate gameshow event" class="w-full h-full object-cover" src="images/hero-homepage.jpg" style="object-position:center 15%;"/>
       <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.90) 0%,rgba(0,0,0,0.3) 40%,rgba(0,0,0,0.1) 100%);"></div>
     </div>
     <div class="relative z-10 text-center w-full pt-16">
@@ -133,125 +119,95 @@
 
   <!-- WHY A GAMESHOW -->
   <section class="py-24 px-6" style="background:#FFFFFF;">
-    <div class="container mx-auto grid md:grid-cols-2 gap-20 items-center">
-      <div class="space-y-6">
-        <p class="font-label text-xs uppercase tracking-[0.25em]" style="color:#C9A84C;">The Format</p>
-        <h2 class="font-display text-4xl md:text-6xl text-ink leading-tight font-bold">Why A Gameshow</h2>
-        <div class="font-body text-ink-muted leading-relaxed text-lg max-w-lg gold-rule-v pl-6">
-          <p>Every failed corporate event has the same root cause. The format asked too much of the people in the room. Gameshows work because competition is a universal language. It does not require anyone to open up, share, or perform on demand. The structure creates the energy. The rounds create the moments. People engage because they want to — not because they have been told to.</p>
-        </div>
-      </div>
-      <div class="relative" style="border:1px solid rgba(201,168,76,0.25);">
-        <img alt="Team reacting during the show" class="w-full aspect-video object-cover" loading="lazy" src="images/why-gameshow.jpg" style="object-position:center 40%;"/>
+    <div class="container mx-auto max-w-3xl text-center">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Format</p>
+      <h2 class="font-display text-4xl md:text-6xl text-ink leading-tight font-bold mb-10">Why A Gameshow</h2>
+      <div class="font-body text-ink-muted leading-relaxed text-xl space-y-6">
+        <p>Gameshows work because competition is a universal language. The structure creates the energy. The rounds create the moments. People connect with each other naturally — not because they have been told to, but because the format gives them a reason to.</p>
+        <p>Real competition produces real reactions. And real reactions are the foundation of genuine connection between people who share a workplace.</p>
       </div>
     </div>
   </section>
 
-  <!-- NETWORKING IMAGE -->
-  <section class="relative overflow-hidden" style="border-bottom:1px solid rgba(0,0,0,0.06);">
-    <img alt="Guests connecting at the event" class="w-full object-cover" loading="lazy" src="images/networking.jpg" style="max-height:500px; object-position:center 40%; display:block;"/>
-    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top,rgba(255,255,255,0.15) 0%,transparent 50%);"></div>
-  </section>
-
-  <!-- FORMAT IS FAIR -->
-  <section class="py-28 text-center relative" style="background:#F9F8F6; border-top:1px solid rgba(0,0,0,0.06); border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">Inclusive by Design</p>
-      <h2 class="font-display text-4xl md:text-6xl text-ink mb-10 leading-tight font-bold italic">The Format Is Fair.<br/>That Changes Everything.</h2>
-      <p class="font-body text-xl text-ink-muted mx-auto leading-relaxed">Seniority is irrelevant. Whether you are the CEO or a new starter, speed on the buzzer and strategic wit are the only currencies that matter. The format levels the room without anyone having to be told to participate.</p>
-    </div>
-  </section>
-
-  <!-- SIX ROUNDS -->
-  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="text-center mb-6">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">The Show</p>
-      <h2 class="font-display text-3xl md:text-5xl text-ink font-bold mb-4">Six rounds available. We select three.</h2>
-    </div>
-    <div class="text-center mb-16 max-w-2xl mx-auto">
-      <p class="font-body text-lg text-ink-muted leading-relaxed">Every booking is different. Before your event, we review your group and choose the three rounds best suited to your team, your culture, and your objectives.</p>
-    </div>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="p-8 hover:bg-surface-warm transition-all card-border" style="background:#FAFAFA;">
-        <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">01</p>
-        <h4 class="font-display text-xl text-ink font-bold mb-3">The Sprint</h4>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Rapid-fire questions. First to buzz in answers — no conferring, no second chances.</p>
-      </div>
-      <div class="p-8 hover:bg-surface-warm transition-all card-border" style="background:#FAFAFA;">
-        <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">02</p>
-        <h4 class="font-display text-xl text-ink font-bold mb-3">Delegation</h4>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Teams nominate one person to answer for everyone. It reveals who the room actually trusts.</p>
-      </div>
-      <div class="p-8 hover:bg-surface-warm transition-all card-border" style="background:#FAFAFA;">
-        <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">03</p>
-        <h4 class="font-display text-xl text-ink font-bold mb-3">The Collective</h4>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Every team member must agree before an answer is submitted. Consensus under pressure.</p>
-      </div>
-      <div class="p-8 hover:bg-surface-warm transition-all card-border" style="background:#FAFAFA;">
-        <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">04</p>
-        <h4 class="font-display text-xl text-ink font-bold mb-3">The Wager</h4>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Teams stake their accumulated points on a single answer. Go big and get it wrong and the game changes completely.</p>
-      </div>
-      <div class="p-8 hover:bg-surface-warm transition-all card-border" style="background:#FAFAFA;">
-        <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">05</p>
-        <h4 class="font-display text-xl text-ink font-bold mb-3">The Consensus</h4>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Predict what the majority of the room will say. There is no right answer — only the most popular one.</p>
-      </div>
-      <div class="p-8 hover:bg-surface-warm transition-all card-border" style="background:#FAFAFA;">
-        <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">06</p>
-        <h4 class="font-display text-xl text-ink font-bold mb-3">The Board</h4>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">The finale. Teams go head to head on the most popular survey answers. Get it wrong and hand the game to your opponents.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- OPERATION IMAGE -->
-  <section class="relative overflow-hidden" style="border-bottom:1px solid rgba(0,0,0,0.06);">
-    <img alt="Host at the setup with live scoreboard" class="w-full object-cover" loading="lazy" src="images/operation-setup.jpg" style="max-height:500px; object-position:center 60%; display:block;"/>
-    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top,rgba(255,255,255,0.15) 0%,transparent 40%);"></div>
-  </section>
-
-  <!-- WHAT IS INCLUDED -->
+  <!-- TWO PRODUCTS -->
   <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Every Show</p>
-        <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">What Is Included</h2>
+    <div class="text-center mb-16">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Choose Your Experience</p>
+      <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">Two Products.<br class="hidden md:block"/> One Format.</h2>
+      <p class="font-body text-lg text-ink-muted mt-6 max-w-2xl mx-auto">Both products are built on The Everyone Show. The difference is in what you are trying to achieve on the day.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+      <!-- TEAM BUILDING CARD -->
+      <div class="flex flex-col gold-card-border" style="background:#FFFFFF;">
+        <div class="overflow-hidden" style="height:280px;">
+          <img loading="lazy" alt="Team building experience" class="w-full h-full object-cover" src="images/why-gameshow.jpg" style="object-position:center 40%;"/>
+        </div>
+        <div class="p-10 flex flex-col flex-1">
+          <p class="font-label text-[10px] uppercase tracking-[0.25em] mb-3" style="color:#C9A84C;">For Teams</p>
+          <h3 class="font-display text-3xl text-ink font-bold mb-4">Team Building</h3>
+          <p class="font-body text-ink-muted leading-relaxed mb-6">A curated show designed to create meaningful interactions across your team. Three rounds selected to build trust, encourage collaboration, and surface the dynamics that make your team tick.</p>
+          <ul class="font-body text-sm text-ink-muted space-y-2 mb-8">
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Three curated rounds linked to team skills</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Professional host and co-host</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Content tailored to your group</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> From £1,000 + VAT</li>
+          </ul>
+          <a href="team-building.html" class="outline-button px-8 py-4 text-sm text-center mt-auto">EXPLORE TEAM BUILDING</a>
+        </div>
       </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
-          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">record_voice_over</span>
+
+      <!-- STAFF ENGAGEMENT CARD -->
+      <div class="flex flex-col gold-card-border" style="background:#FFFFFF;">
+        <div class="overflow-hidden" style="height:280px;">
+          <img loading="lazy" alt="Staff engagement experience" class="w-full h-full object-cover" src="images/operation-setup.jpg" style="object-position:center 30%;"/>
+        </div>
+        <div class="p-10 flex flex-col flex-1">
+          <p class="font-label text-[10px] uppercase tracking-[0.25em] mb-3" style="color:#C9A84C;">For Events</p>
+          <h3 class="font-display text-3xl text-ink font-bold mb-4">Staff Engagement</h3>
+          <p class="font-body text-ink-muted leading-relaxed mb-6">A high-energy TV-style show built for celebration and reward. Gaming stations and a resident DJ included as standard to create a full-evening experience your team will talk about on Monday.</p>
+          <ul class="font-body text-sm text-ink-muted space-y-2 mb-8">
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> TV-style gameshow centrepiece</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Gaming stations included</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Resident DJ included</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> From £1,750 + VAT</li>
+          </ul>
+          <a href="staff-engagement.html" class="outline-button px-8 py-4 text-sm text-center mt-auto">EXPLORE STAFF ENGAGEMENT</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NOT SURE WHICH IS RIGHT -->
+  <section class="py-20 px-6" style="background:#0D1B2A; border-bottom:1px solid rgba(201,168,76,0.15);">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:rgba(201,168,76,0.7);">Not Sure?</p>
+        <h2 class="font-display text-3xl md:text-5xl text-white font-bold italic mb-6">Not Sure Which Is Right for You?</h2>
+        <p class="font-body text-white/60 text-lg leading-relaxed">If your priority is building stronger relationships and better team dynamics — Team Building is the right choice.</p>
+        <p class="font-body text-white/60 text-lg leading-relaxed mt-4">If your priority is energy, celebration, and a night your team enjoys — Staff Engagement is the one.</p>
+        <p class="font-body text-white/60 text-lg leading-relaxed mt-4">Not certain? Send us your event date and what you are trying to achieve. We will tell you which product fits and why.</p>
+      </div>
+      <div class="space-y-5">
+        <div class="p-8 flex items-start gap-6" style="border:1px solid rgba(201,168,76,0.2); background:rgba(201,168,76,0.04);">
           <div>
-            <h4 class="font-display text-lg text-ink mb-2 font-bold">Professional Host and Co-Host</h4>
-            <p class="font-body text-ink-muted text-sm leading-relaxed">Two experienced facilitators who control the energy, manage the pace, and ensure nothing is left to chance.</p>
+            <p class="font-label text-xs uppercase tracking-widest mb-2" style="color:#C9A84C;">Team Building</p>
+            <p class="font-body text-white/70 text-sm leading-relaxed">Meaningful interactions, trust building, lasting connection. Best for teams that need to work better together.</p>
           </div>
         </div>
-        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
-          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">electric_bolt</span>
+        <div class="p-8 flex items-start gap-6" style="border:1px solid rgba(201,168,76,0.2); background:rgba(201,168,76,0.04);">
           <div>
-            <h4 class="font-display text-lg text-ink mb-2 font-bold">Licensed Buzzers and Live Scoring</h4>
-            <p class="font-body text-ink-muted text-sm leading-relaxed">Broadcast-quality technology that makes the format feel like television, not a pub quiz.</p>
+            <p class="font-label text-xs uppercase tracking-widest mb-2" style="color:#C9A84C;">Staff Engagement</p>
+            <p class="font-body text-white/70 text-sm leading-relaxed">High energy, celebration, full-evening experience. Best for reward events, socials, and company milestones.</p>
           </div>
         </div>
-        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
-          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">layers</span>
-          <div>
-            <h4 class="font-display text-lg text-ink mb-2 font-bold">Content Tailored to Your Group</h4>
-            <p class="font-body text-ink-muted text-sm leading-relaxed">We take a brief before the event. You do not receive a generic format.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
-          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">settings_input_component</span>
-          <div>
-            <h4 class="font-display text-lg text-ink mb-2 font-bold">Full Setup and Breakdown</h4>
-            <p class="font-body text-ink-muted text-sm leading-relaxed">We arrive, build it, run it, and pack it down. Nothing is required from you or your team on the day.</p>
-          </div>
-        </div>
+        <a href="contact.html" class="primary-button px-10 py-4 text-sm inline-block w-full text-center">HELP ME CHOOSE</a>
       </div>
     </div>
   </section>
 
-  <!-- THE ROADMAP -->
+  <!-- HOW IT WORKS -->
   <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
     <div class="text-center mb-20">
       <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">The Process</p>
@@ -282,137 +238,18 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="text-center mb-16">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">What Clients Say</p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-      <div class="p-10 flex flex-col justify-between card-border bg-white">
-        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"The most engaged our team has been in years. The competitive energy was electric and the hosting was top-tier."</p>
-        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
-          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">RC</div>
-          <div>
-            <p class="font-label text-sm font-bold text-ink">Rob Cooke</p>
-            <p class="font-body text-xs text-ink-muted">Events Director — Crown Estate</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-10 flex flex-col justify-between card-border bg-white">
-        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"A truly fair format that brought out the best in everyone. We are already planning our next session."</p>
-        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
-          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">AS</div>
-          <div>
-            <p class="font-label text-sm font-bold text-ink">Aroob Sajjid</p>
-            <p class="font-body text-xs text-ink-muted">Membership Experience Executive — MYO Piccadilly</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-10 flex flex-col justify-between card-border bg-white">
-        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"Professional, high-energy, and perfectly executed. The buzzers completely changed the dynamic."</p>
-        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
-          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">TW</div>
-          <div>
-            <p class="font-label text-sm font-bold text-ink">Tariq Williams</p>
-            <p class="font-body text-xs text-ink-muted">Founder — Arkhiventeros</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEYOND THE BUZZER -->
-  <section class="py-24 px-6 relative overflow-hidden" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="absolute inset-0 pointer-events-none">
-      <img alt="" class="w-full h-full object-cover" loading="lazy" src="images/beyond-buzzer.jpg" style="object-position:center 40%;"/>
-      <div class="absolute inset-0" style="background:rgba(249,248,246,0.35);"></div>
-    </div>
-    <div class="container mx-auto relative z-10">
-      <div class="mb-14">
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Optional Add-Ons</p>
-        <h2 class="font-display text-4xl md:text-6xl text-ink font-bold mb-4">Beyond the Buzzer</h2>
-        <p class="font-label text-sm text-ink font-bold mb-2">Available as optional add-ons. Ask us when you enquire.</p>
-        <p class="font-body text-lg text-ink max-w-xl">Keep the energy high with our resident DJ and an arsenal of high-end gaming stations to round out your event.</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="aspect-square card-border flex flex-col items-center justify-center p-4 md:p-8 hover:bg-white transition-all bg-white/80">
-          <span class="material-symbols-outlined text-4xl md:text-6xl mb-3 md:mb-5" style="color:#C9A84C;">golf_course</span>
-          <span class="font-label text-xs md:text-sm text-ink font-bold uppercase tracking-widest text-center">Mini Golf</span>
-        </div>
-        <div class="aspect-square card-border flex flex-col items-center justify-center p-4 md:p-8 hover:bg-white transition-all bg-white/80">
-          <span class="material-symbols-outlined text-4xl md:text-6xl mb-3 md:mb-5" style="color:#C9A84C;">sports_hockey</span>
-          <span class="font-label text-xs md:text-sm text-ink font-bold uppercase tracking-widest text-center">Air Hockey</span>
-        </div>
-        <div class="aspect-square card-border flex flex-col items-center justify-center p-4 md:p-8 hover:bg-white transition-all bg-white/80">
-          <span class="material-symbols-outlined text-4xl md:text-6xl mb-3 md:mb-5" style="color:#C9A84C;">sports_soccer</span>
-          <span class="font-label text-xs md:text-sm text-ink font-bold uppercase tracking-widest text-center">Table Football</span>
-        </div>
-        <div class="aspect-square card-border flex flex-col items-center justify-center p-4 md:p-8 hover:bg-white transition-all bg-white/80">
-          <span class="material-symbols-outlined text-4xl md:text-6xl mb-3 md:mb-5" style="color:#C9A84C;">joystick</span>
-          <span class="font-label text-xs md:text-sm text-ink font-bold uppercase tracking-widest text-center">Nintendo Switch</span>
-        </div>
-        <div class="aspect-square card-border flex flex-col items-center justify-center p-4 md:p-8 hover:bg-white transition-all bg-white/80">
-          <span class="material-symbols-outlined text-4xl md:text-6xl mb-3 md:mb-5" style="color:#C9A84C;">align_items_stretch</span>
-          <span class="font-label text-xs md:text-sm text-ink font-bold uppercase tracking-widest text-center">Giant Jenga</span>
-        </div>
-        <div class="aspect-square card-border flex flex-col items-center justify-center p-4 md:p-8 hover:bg-white transition-all bg-white/80">
-          <span class="material-symbols-outlined text-4xl md:text-6xl mb-3 md:mb-5" style="color:#C9A84C;">target</span>
-          <span class="font-label text-xs md:text-sm text-ink font-bold uppercase tracking-widest text-center">Cornhole</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING BAR -->
-  <div class="py-10 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
-    <div class="max-w-7xl mx-auto flex flex-col items-center gap-6">
-      <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div class="flex flex-col gap-1">
-          <span class="font-label text-xs text-ink-muted uppercase tracking-[0.2em]">Starting From</span>
-          <span class="font-display text-2xl font-bold" style="color:#C9A84C;">£1,000 + VAT</span>
-        </div>
-        <div class="flex flex-col gap-1">
-          <span class="font-label text-xs text-ink-muted uppercase tracking-[0.2em]">Group Size</span>
-          <span class="font-display text-2xl font-bold" style="color:#C9A84C;">20–300</span>
-        </div>
-        <div class="flex flex-col gap-1">
-          <span class="font-label text-xs text-ink-muted uppercase tracking-[0.2em]">Location</span>
-          <span class="font-display text-2xl font-bold" style="color:#C9A84C;">UK</span>
-        </div>
-        <div class="flex flex-col gap-1">
-          <span class="font-label text-xs text-ink-muted uppercase tracking-[0.2em]">Turnaround</span>
-          <span class="font-display text-2xl font-bold" style="color:#C9A84C;">24hr Quote</span>
-        </div>
-      </div>
-      <p class="font-body text-xs text-ink-muted text-center max-w-2xl">The £1,000 starting price covers groups of up to 20. Pricing scales with group size. All equipment, hosting, setup and breakdown is included in every quote.</p>
-    </div>
-  </div>
-
-  <!-- THREE PHOTO ROW -->
-  <section class="grid grid-cols-3" style="border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="overflow-hidden" style="height:500px;">
-      <img alt="Guests at the buzzer" class="w-full h-full object-cover" loading="lazy" src="images/tce-20.jpg" style="object-position:center 75%;"/>
-    </div>
-    <div class="overflow-hidden" style="height:500px;">
-      <img alt="Guest holding a card during the show" class="w-full h-full object-cover" loading="lazy" src="images/tce-47.jpg" style="object-position:center 30%;"/>
-    </div>
-    <div class="overflow-hidden" style="height:500px;">
-      <img alt="Guest playing at the event" class="w-full h-full object-cover" loading="lazy" src="images/tce-7.jpg" style="object-position:center 50%;"/>
-    </div>
-  </section>
-
   <!-- FINAL CTA -->
-  <section class="py-28 text-center px-6" style="background:#C9A84C;">
+  <section class="py-28 text-center px-6" style="background:#0D1B2A;">
     <div class="container mx-auto max-w-3xl">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(255,255,255,0.7);">Get In Touch</p>
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Get In Touch</p>
       <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">Tell Us Your Date.<br/>We Handle the Rest.</h2>
-      <p class="font-body text-xl mb-12" style="color:rgba(255,255,255,0.8);">Send us your event date and group size. We respond within one working day.</p>
-      <a href="contact.html" class="font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block px-16 py-5 text-sm" style="background:#0A0A0A; color:#FFFFFF;">GET A QUOTE</a>
+      <p class="font-body text-xl mb-12 text-white/60">Send us your event date and group size. We respond within one working day.</p>
+      <a href="contact.html" class="primary-button px-16 py-5 text-sm">GET A QUOTE</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="p-16" style="background:#0A0A0A; border-top:1px solid rgba(201,168,76,0.15);">
+  <footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
     <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
       <div>
         <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>

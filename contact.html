@@ -4,142 +4,109 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact Us | On The Buzzer</title>
 <link rel="icon" type="image/png" href="favicon.png"/>
-<link rel="icon" type="image/png" href="favicon.png"/>
 <meta name="description" content="Get a quote for The Everyone Show. Send us your event date and group size. We respond within one working day."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<script>
   tailwind.config = {
     theme: {
       extend: {
-        colors: {
-          "gold": "#C9A84C",
-          "gold-light": "#E8C96A",
-          "ink": "#0A0A0A",
-          "ink-muted": "#6B6B6B",
-          "surface": "#FFFFFF",
-          "surface-warm": "#F9F8F6",
-        },
-        fontFamily: {
-          "display": ["Playfair Display", "serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Space Grotesk", "sans-serif"],
-        },
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
       },
     },
   }
 </script>
 <style type="text/tailwindcss">
   @layer base {
-    body {
-      @apply font-body overflow-x-hidden;
-      background-color: #FFFFFF;
-      color: #0A0A0A;
-    }
-    h1, h2, h3, h4, h5, h6 { font-family: "Playfair Display", serif; }
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
   }
-  .primary-button {
-    @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block;
-    background-color: #C9A84C; color: #FFFFFF; letter-spacing: 0.12em;
-  }
-  .primary-button:hover { background-color: #B8962E; }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
   input, textarea {
     @apply font-body text-ink w-full px-0 py-3 outline-none transition-all duration-200 bg-transparent;
-    border-bottom: 1px solid rgba(0,0,0,0.15);
-    border-top: none; border-left: none; border-right: none;
-    border-radius: 0;
+    border-bottom:1px solid rgba(0,0,0,0.15); border-top:none; border-left:none; border-right:none; border-radius:0;
   }
-  input:focus, textarea:focus { border-bottom-color: #C9A84C; }
-  input::placeholder, textarea::placeholder { color: rgba(0,0,0,0.3); font-size: 0.875rem; }
-  input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0.4; }
+  input:focus, textarea:focus { border-bottom-color:#C9A84C; }
+  input::placeholder, textarea::placeholder { color:rgba(0,0,0,0.3); font-size:0.875rem; }
+  input[type="date"]::-webkit-calendar-picker-indicator { opacity:0.4; }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 bg-white/95 backdrop-blur-sm" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
   <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
-  <div class="hidden md:flex gap-10">
+  <div class="hidden md:flex gap-10 items-center">
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all flex items-center gap-1">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="team-building.html">Team Building</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="staff-engagement.html">Staff Engagement</a>
+      </div>
+    </div>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
-    <a class="font-label text-xs font-bold uppercase tracking-widest pb-0.5 transition-all" style="color:#C9A84C; border-bottom:1px solid #C9A84C;" href="contact.html">CONTACT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest pb-0.5" style="color:#C9A84C; border-bottom:1px solid #C9A84C;" href="contact.html">CONTACT US</a>
   </div>
   <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
-    <span class="w-6 h-px block" style="background:#0A0A0A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
   </button>
 </nav>
 <div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="staff-engagement.html">Staff Engagement</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="contact.html">Contact Us</a>
 </div>
-
 <div class="max-w-[1400px] mx-auto min-h-screen">
   <main class="relative pt-32 pb-24">
-
-    <!-- HERO -->
     <section class="relative w-full py-16 flex flex-col items-center justify-center text-center px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
       <div class="max-w-3xl space-y-6">
         <p class="font-label text-xs uppercase tracking-[0.25em]" style="color:#C9A84C;">Get In Touch</p>
-        <h1 class="font-display text-5xl md:text-7xl text-ink leading-tight font-bold italic">
-          Tell Us Your Date,<br/>We Handle the Rest.
-        </h1>
-        <p class="font-body text-lg text-ink-muted">
-          Fill in the form below, we respond within one working day.
-        </p>
+        <h1 class="font-display text-5xl md:text-7xl text-ink leading-tight font-bold italic">Tell Us Your Date,<br/>We Handle the Rest.</h1>
+        <p class="font-body text-lg text-ink-muted">Fill in the form below, we respond within one working day.</p>
       </div>
     </section>
-
-    <!-- FORM -->
     <section class="relative z-10 w-full max-w-3xl mx-auto px-6 py-20">
       <form class="grid grid-cols-1 md:grid-cols-2 gap-12">
-
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="name">Full Name <span style="color:#C9A84C;">*</span></label>
           <input id="name" placeholder="Enter your name" required type="text"/>
         </div>
-
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="org">Organisation <span style="color:#C9A84C;">*</span></label>
           <input id="org" placeholder="Company name" required type="text"/>
         </div>
-
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="email">Email Address <span style="color:#C9A84C;">*</span></label>
           <input id="email" placeholder="email@domain.com" required type="email"/>
         </div>
-
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="phone">Phone Number <span class="text-ink-muted/50">(Optional)</span></label>
           <input id="phone" placeholder="+44 0000 000000" type="tel"/>
         </div>
-
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="date">Event Date <span style="color:#C9A84C;">*</span></label>
           <input id="date" required type="date"/>
         </div>
-
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="size">Group Size <span style="color:#C9A84C;">*</span></label>
           <input id="size" placeholder="Number of guests" required type="number" min="20"/>
         </div>
-
         <div class="flex flex-col space-y-2 md:col-span-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="message">Anything else we should know? <span style="color:#C9A84C;">*</span></label>
           <textarea id="message" placeholder="Describe your event requirements" required rows="5"></textarea>
         </div>
-
         <div class="md:col-span-2 pt-6 flex flex-col items-center space-y-4 text-center">
           <button class="primary-button px-14 py-4 text-sm" type="submit">Send Enquiry</button>
           <p class="font-body text-xs text-ink-muted">No deposit required. We will come back to you within one working day.</p>
         </div>
-
       </form>
     </section>
-
-    <!-- TRUST BAR -->
     <section class="py-16 mx-6" style="background:#F9F8F6; border:1px solid rgba(0,0,0,0.07);">
       <p class="font-label text-xs uppercase text-center mb-10 tracking-[0.25em] text-ink-muted">Trusted by organisations that cannot afford to get it wrong</p>
       <div class="flex flex-wrap justify-center items-center gap-16">
@@ -149,11 +116,8 @@
         <div class="font-label text-lg font-bold text-ink/30 hover:text-ink transition-colors tracking-widest uppercase">UNI OF ESSEX</div>
       </div>
     </section>
-
   </main>
-
-  <!-- FOOTER -->
-  <footer class="p-16" style="background:#0A0A0A; border-top:1px solid rgba(201,168,76,0.15);">
+  <footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
     <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
       <div>
         <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>
@@ -166,6 +130,5 @@
       <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
     </div>
   </footer>
-
 </div>
 </body></html>
