@@ -32,6 +32,61 @@
   .outline-button:hover { border-color:#C9A84C; background:rgba(201,168,76,0.06); }
   .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
 </style>
+
+  <style>
+    /* 2. Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* 4. Card hover lift */
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    /* 5. Image zoom on hover */
+    .img-zoom { overflow: hidden; }
+    .img-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom:hover img {
+      transform: scale(1.04);
+    }
+
+    /* 6. Gold rule reveal */
+    .gold-rule-v {
+      border-left: 0px solid rgba(201,168,76,0.6);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .gold-rule-v::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 0%;
+      background: rgba(201,168,76,0.6);
+      transition: height 0.8s ease;
+    }
+    .gold-rule-v.aos-animate::before {
+      height: 100%;
+    }
+
+    /* 7. Page transition */
+    body {
+      animation: pageFadeIn 0.4s ease forwards;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="http"]):not([target="_blank"]) {
+      transition: opacity 0.15s ease;
+    }
+  </style>
 </head>
 <body class="selection:bg-gold selection:text-white">
 
@@ -48,6 +103,7 @@
       </div>
     </div>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="impact.html">OUR IMPACT</a>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
   </div>
   <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
@@ -61,6 +117,7 @@
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="staff-engagement.html">Staff Engagement</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="impact.html">Our Impact</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
 </div>
 
@@ -82,7 +139,7 @@
   </section>
 
   <!-- TRUST BAR -->
-  <section class="py-14 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
+  <section class="py-16 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.07);">
     <p class="font-label text-xs uppercase text-center mb-10 tracking-[0.3em] text-ink-muted">Trusted by 20+ organisations that cannot afford to get it wrong, including:</p>
     <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
       <div class="font-label text-2xl md:text-3xl font-bold text-ink/50 hover:text-ink transition-colors tracking-widest uppercase">CROWN ESTATE</div>
@@ -93,7 +150,7 @@
   </section>
 
   <!-- STATS BAR -->
-  <section class="py-12 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.07);">
+  <section class="py-16 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.07);">
     <div class="flex flex-col md:flex-row justify-around items-center gap-8 max-w-5xl mx-auto">
       <div class="text-center md:flex-1">
         <p class="font-display text-5xl font-black mb-1" style="color:#C9A84C;">3</p>
@@ -133,13 +190,13 @@
   <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
     <div class="text-center mb-16">
       <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Choose Your Experience</p>
-      <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">Two Products.<br class="hidden md:block"/> One Format.</h2>
-      <p class="font-body text-lg text-ink-muted mt-6 max-w-2xl mx-auto">Both products are built on The Everyone Show. The difference is in what you are trying to achieve on the day.</p>
+      <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">Two Products.<br class="hidden md:block"/> Two Formats.</h2>
+      <p class="font-body text-lg text-ink-muted mt-6 max-w-2xl mx-auto">Each product is built for a different objective. The format, the rounds, and the experience are distinct — choose based on what you want your team to leave with.</p>
     </div>
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
       <!-- TEAM BUILDING CARD -->
-      <div class="flex flex-col gold-card-border" style="background:#FFFFFF;">
+      <div class="flex flex-col gold-card-border card-hover" style="background:#FFFFFF;">
         <div class="overflow-hidden" style="height:280px;">
           <img loading="lazy" alt="Team building experience" class="w-full h-full object-cover" src="images/why-gameshow.jpg" style="object-position:center 40%;"/>
         </div>
@@ -151,14 +208,14 @@
             <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Three curated rounds linked to team skills</li>
             <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Professional host and co-host</li>
             <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Content tailored to your group</li>
-            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> From £1,000 + VAT</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> From £1,000 </li>
           </ul>
           <a href="team-building.html" class="outline-button px-8 py-4 text-sm text-center mt-auto">EXPLORE TEAM BUILDING</a>
         </div>
       </div>
 
       <!-- STAFF ENGAGEMENT CARD -->
-      <div class="flex flex-col gold-card-border" style="background:#FFFFFF;">
+      <div class="flex flex-col gold-card-border card-hover" style="background:#FFFFFF;">
         <div class="overflow-hidden" style="height:280px;">
           <img loading="lazy" alt="Staff engagement experience" class="w-full h-full object-cover" src="images/operation-setup.jpg" style="object-position:center 30%;"/>
         </div>
@@ -170,7 +227,7 @@
             <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> TV-style gameshow centrepiece</li>
             <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Gaming stations included</li>
             <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> Resident DJ included</li>
-            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> From £1,750 + VAT</li>
+            <li class="flex items-center gap-3"><span style="color:#C9A84C;">—</span> From £1,750 </li>
           </ul>
           <a href="staff-engagement.html" class="outline-button px-8 py-4 text-sm text-center mt-auto">EXPLORE STAFF ENGAGEMENT</a>
         </div>
@@ -180,7 +237,7 @@
   </section>
 
   <!-- NOT SURE WHICH IS RIGHT -->
-  <section class="py-20 px-6" style="background:#0D1B2A; border-bottom:1px solid rgba(201,168,76,0.15);">
+  <section class="py-24 px-6" style="background:#0D1B2A; border-bottom:1px solid rgba(201,168,76,0.15);">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
       <div>
         <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:rgba(201,168,76,0.7);">Not Sure?</p>
@@ -257,11 +314,7 @@
       </div>
       <div class="flex gap-12">
         <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
-        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="/cdn-cgi/l/email-protection#422b2c242d022d2c362a272037383827306c212d6c3729">Email Us</a>
       </div>
       <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
-    </div>
-  </footer>
-
-</div>
-</body></html>
+ 

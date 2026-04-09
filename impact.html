@@ -31,6 +31,61 @@
   .outline-button:hover { border-color:#C9A84C; background:rgba(201,168,76,0.06); }
   .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
 </style>
+
+  <style>
+    /* 2. Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* 4. Card hover lift */
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    /* 5. Image zoom on hover */
+    .img-zoom { overflow: hidden; }
+    .img-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom:hover img {
+      transform: scale(1.04);
+    }
+
+    /* 6. Gold rule reveal */
+    .gold-rule-v {
+      border-left: 0px solid rgba(201,168,76,0.6);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .gold-rule-v::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 0%;
+      background: rgba(201,168,76,0.6);
+      transition: height 0.8s ease;
+    }
+    .gold-rule-v.aos-animate::before {
+      height: 100%;
+    }
+
+    /* 7. Page transition */
+    body {
+      animation: pageFadeIn 0.4s ease forwards;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="http"]):not([target="_blank"]) {
+      transition: opacity 0.15s ease;
+    }
+  </style>
 </head>
 <body>
 
@@ -82,71 +137,16 @@
 
   <!-- WHY WE GIVE BACK -->
   <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-stretch">
-      <div>
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Philosophy</p>
-        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-8 leading-tight">Games Are the Most Powerful Tool for Raising Money.</h2>
-        <div class="space-y-5 font-body text-lg text-ink-muted leading-relaxed gold-rule-v pl-6">
-          <p>Giving back is built into the format. Competition brings people together, lowers their guard, and creates a room full of people who are genuinely present — and that is precisely the environment in which generosity flourishes.</p>
-          <p>We believe games are one of the most underused vehicles for doing good. The structure holds attention, the competition creates stakes, and the collective experience gives people something to give toward together.</p>
-          <p>We have used the format to raise money for causes we believe in. Movember was one of them. The evening raised thousands of pounds and the room understood immediately why the cause and the format were a natural fit.</p>
-          <p>This is not a one-off. Giving back is a core part of how On The Buzzer operates, and we intend to keep doing it.</p>
-        </div>
+    <div class="max-w-4xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Philosophy</p>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-8 leading-tight">Games Are the Most Powerful Tool for Raising Money.</h2>
+      <div class="space-y-5 font-body text-lg text-ink-muted leading-relaxed gold-rule-v pl-6 mb-12">
+        <p>We believe businesses have a responsibility to give back to the communities they operate in. For On The Buzzer, that is not a policy — it is built into why we exist.</p>
+        <p>Competition creates presence. When people are genuinely competing, they are fully in the room — and that is the environment in which generosity happens naturally. A competitive format holds attention in a way that a speaker or a raffle never does. Giving becomes part of a shared experience rather than a separate ask.</p>
+        <p>In 2025 our Movember fundraising event raised over £3,000 for men's health. This is only the beginning.</p>
       </div>
-      <div class="flex flex-col gap-4">
-        <div class="flex-1 overflow-hidden" style="border:1px solid rgba(201,168,76,0.25); min-height:0;">
-          <img loading="lazy" alt="Movember fundraising event" class="w-full h-full object-cover" src="images/movember-1.jpg" style="object-position:center 40%;"/>
-        </div>
-        <div class="grid grid-cols-2 gap-4" style="height:220px;">
-          <div class="overflow-hidden" style="border:1px solid rgba(201,168,76,0.2);">
-            <img loading="lazy" alt="Movember event" class="w-full h-full object-cover" src="images/movember-2.jpg" style="object-position:center 40%;"/>
-          </div>
-          <div class="overflow-hidden" style="border:1px solid rgba(201,168,76,0.2);">
-            <img loading="lazy" alt="Movember event" class="w-full h-full object-cover" src="images/movember-3.jpg" style="object-position:center 40%;"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY GAMES WORK FOR FUNDRAISING -->
-  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Why It Works</p>
-        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic">Why Competition Works<br/>Where Other Formats Don't.</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-8 card-border" style="background:#FFFFFF;">
-          <p class="font-label text-xs uppercase tracking-widest mb-3" style="color:#C9A84C;">Full Attention</p>
-          <p class="font-body text-sm text-ink-muted leading-relaxed">A competitive format holds the room in a way that a speaker or a raffle never does. Every person is engaged from the first question to the last. That attention is the most valuable thing a fundraiser can have.</p>
-        </div>
-        <div class="p-8 card-border" style="background:#FFFFFF;">
-          <p class="font-label text-xs uppercase tracking-widest mb-3" style="color:#C9A84C;">Shared Experience</p>
-          <p class="font-body text-sm text-ink-muted leading-relaxed">When people experience something together — the tension of a close round, the drama of a final question — they feel a collective investment in the moment. Giving becomes part of that shared experience rather than a separate ask.</p>
-        </div>
-        <div class="p-8 card-border" style="background:#FFFFFF;">
-          <p class="font-label text-xs uppercase tracking-widest mb-3" style="color:#C9A84C;">Real Energy</p>
-          <p class="font-body text-sm text-ink-muted leading-relaxed">Competition creates genuine reactions. Laughter, surprise, celebration. That energy does not need to be manufactured or prompted. It exists naturally — and it makes people more receptive, more generous, and more connected to a cause.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WANT TO RAISE MONEY -->
-  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-stretch">
-      <div>
-        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Work With Us</p>
-        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-8 leading-tight">Want to Raise Money at Your Next Event?</h2>
-        <div class="space-y-5 font-body text-lg text-ink-muted leading-relaxed gold-rule-v pl-6">
-          <p>If you are organising an event for a cause you care about, we would like to help. The Everyone Show is built for exactly this — a format that generates real energy, holds a room's attention, and creates the right conditions for generosity.</p>
-          <p>Tell us about your event and your cause. We will tell you how we can make it work.</p>
-        </div>
-        <a href="contact.html" class="primary-button px-10 py-4 text-sm inline-block mt-10">GET IN TOUCH</a>
-      </div>
-      <div style="border:1px solid rgba(201,168,76,0.25); overflow:hidden;">
-        <img loading="lazy" alt="Event crowd reaction" class="w-full h-full object-cover" src="images/buzzer-reaction.jpg" style="object-position:center 40%;"/>
+      <div class="img-zoom" style="border:1px solid rgba(201,168,76,0.25); height:700px;">
+        <img loading="lazy" alt="Movember fundraising event" class="w-full h-full object-cover" src="images/movember-1.jpg" style="object-position:center 85%;"/>
       </div>
     </div>
   </section>
@@ -154,9 +154,9 @@
   <!-- FINAL CTA -->
   <section class="py-28 text-center px-6" style="background:#0D1B2A;">
     <div class="container mx-auto max-w-3xl">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Get In Touch</p>
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Work With Us</p>
       <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">The Show That<br/>Gives Back.</h2>
-      <p class="font-body text-xl mb-12 text-white/60">If you want to raise money at your next event, or want to know more about how we give back, get in touch.</p>
+      <p class="font-body text-xl mb-12 text-white/60">If you are organising an event for a cause you care about, we would like to help. Tell us about your event and your cause — we will tell you how we can make it work.</p>
       <a href="contact.html" class="primary-button px-16 py-5 text-sm">GET IN TOUCH</a>
     </div>
   </section>
@@ -177,4 +177,34 @@
   </footer>
 
 </div>
+
+<script>
+  // AOS init
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 60,
+  });
+
+  // GSAP hero sequence
+  gsap.registerPlugin(ScrollTrigger);
+
+  const heroSection = document.querySelector('section');
+  if (heroSection) {
+    const label = heroSection.querySelector('p.font-label');
+    const h1 = heroSection.querySelector('h1');
+    const sub = heroSection.querySelector('p.font-body, p.font-display');
+    const cta = heroSection.querySelector('a');
+
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    if (label) tl.from(label, { opacity: 0, y: 20, duration: 0.7 }, 0.1);
+    if (h1)    tl.from(h1,    { opacity: 0, y: 40, duration: 0.9 }, 0.25);
+    if (sub)   tl.from(sub,   { opacity: 0, y: 25, duration: 0.8 }, 0.55);
+    if (cta)   tl.from(cta,   { opacity: 0, y: 15, duration: 0.6 }, 0.8);
+  }
+
+  // GSAP nav fade in
+  gsap.from('nav', { opacity: 0, y: -20, duration: 0.6, ease: 'power2.out', delay: 0.1 });
+</script>
 </body></html>

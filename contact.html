@@ -33,6 +33,61 @@
   input::placeholder, textarea::placeholder { color:rgba(0,0,0,0.3); font-size:0.875rem; }
   input[type="date"]::-webkit-calendar-picker-indicator { opacity:0.4; }
 </style>
+
+  <style>
+    /* 2. Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* 4. Card hover lift */
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    /* 5. Image zoom on hover */
+    .img-zoom { overflow: hidden; }
+    .img-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom:hover img {
+      transform: scale(1.04);
+    }
+
+    /* 6. Gold rule reveal */
+    .gold-rule-v {
+      border-left: 0px solid rgba(201,168,76,0.6);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .gold-rule-v::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 0%;
+      background: rgba(201,168,76,0.6);
+      transition: height 0.8s ease;
+    }
+    .gold-rule-v.aos-animate::before {
+      height: 100%;
+    }
+
+    /* 7. Page transition */
+    body {
+      animation: pageFadeIn 0.4s ease forwards;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="http"]):not([target="_blank"]) {
+      transition: opacity 0.15s ease;
+    }
+  </style>
 </head>
 <body>
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
@@ -47,6 +102,7 @@
       </div>
     </div>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="impact.html">OUR IMPACT</a>
     <a class="font-label text-xs font-bold uppercase tracking-widest pb-0.5" style="color:#C9A84C; border-bottom:1px solid #C9A84C;" href="contact.html">CONTACT US</a>
   </div>
   <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
@@ -60,6 +116,7 @@
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="staff-engagement.html">Staff Engagement</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="impact.html">Our Impact</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="contact.html">Contact Us</a>
 </div>
 <div class="max-w-[1400px] mx-auto min-h-screen">
@@ -71,7 +128,7 @@
         <p class="font-body text-lg text-ink-muted">Fill in the form below, we respond within one working day.</p>
       </div>
     </section>
-    <section class="relative z-10 w-full max-w-3xl mx-auto px-6 py-20">
+    <section class="relative z-10 w-full max-w-3xl mx-auto px-6 py-24">
       <form class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="name">Full Name <span style="color:#C9A84C;">*</span></label>
@@ -125,10 +182,6 @@
       </div>
       <div class="flex gap-12">
         <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
-        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="/cdn-cgi/l/email-protection#fb92959d94bb94958f939e998e81819e89d59894d58e90">Email Us</a>
       </div>
       <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
-    </div>
-  </footer>
-</div>
-</body></html>
