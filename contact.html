@@ -132,31 +132,31 @@
       <form action="https://formspree.io/f/meepbzdr" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="name">Full Name <span style="color:#C9A84C;">*</span></label>
-          <input id="name" placeholder="Enter your name" required type="text"/>
+          <input id="name" name="name" placeholder="Enter your name" required type="text"/>
         </div>
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="org">Organisation <span style="color:#C9A84C;">*</span></label>
-          <input id="org" placeholder="Company name" required type="text"/>
+          <input id="org" name="organisation" placeholder="Company name" required type="text"/>
         </div>
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="email">Email Address <span style="color:#C9A84C;">*</span></label>
-          <input id="email" placeholder="email@domain.com" required type="email"/>
+          <input id="email" name="email" placeholder="email@domain.com" required type="email"/>
         </div>
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="phone">Phone Number <span class="text-ink-muted/50">(Optional)</span></label>
-          <input id="phone" placeholder="+44 0000 000000" type="tel"/>
+          <input id="phone" name="phone" placeholder="+44 0000 000000" type="tel"/>
         </div>
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="date">Event Date <span style="color:#C9A84C;">*</span></label>
-          <input id="date" required type="date"/>
+          <input id="date" name="event_date" required type="date"/>
         </div>
         <div class="flex flex-col space-y-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="size">Group Size <span style="color:#C9A84C;">*</span></label>
-          <input id="size" placeholder="Number of guests" required type="number" min="20"/>
+          <input id="size" name="group_size" placeholder="Number of guests" required type="number" min="20"/>
         </div>
         <div class="flex flex-col space-y-2 md:col-span-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="message">Anything else we should know? <span style="color:#C9A84C;">*</span></label>
-          <textarea id="message" placeholder="Describe your event requirements" required rows="5"></textarea>
+          <textarea id="message" name="message" placeholder="Describe your event requirements" required rows="5"></textarea>
         </div>
         <div class="md:col-span-2 pt-6 flex flex-col items-center space-y-4 text-center">
           <button class="primary-button px-14 py-4 text-sm" type="submit">Send Enquiry</button>
