@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Networking | On The Buzzer</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<meta name="description" content="On The Buzzer Networking — a high-energy TV-style gameshow with gaming stations and resident DJ included. Built for celebration and reward. From £1,750 ."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
+      },
+    },
+  }
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
+  }
+  .gold-rule-v { border-left:2px solid rgba(201,168,76,0.6); }
+  .card-border { border:1px solid rgba(0,0,0,0.08); }
+  .gold-card-border { border:1px solid rgba(201,168,76,0.35); }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
+</style>
+
+  <style>
+    /* 2. Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* 4. Card hover lift */
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    /* 5. Image zoom on hover */
+    .img-zoom { overflow: hidden; }
+    .img-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom:hover img {
+      transform: scale(1.04);
+    }
+
+    /* 6. Gold rule reveal */
+    .gold-rule-v {
+      border-left: 0px solid rgba(201,168,76,0.6);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .gold-rule-v::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 0%;
+      background: rgba(201,168,76,0.6);
+      transition: height 0.8s ease;
+    }
+    .gold-rule-v.aos-animate::before {
+      height: 100%;
+    }
+
+    /* 7. Page transition */
+    body {
+      animation: pageFadeIn 0.4s ease forwards;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="http"]):not([target="_blank"]) {
+      transition: opacity 0.15s ease;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
+  <div class="hidden md:flex gap-10 items-center">
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest pb-0.5 flex items-center gap-1" style="color:#C9A84C; border-bottom:1px solid #C9A84C;">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="team-building.html">Team Building</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 hover:bg-surface-warm transition-all" style="color:#C9A84C; border-top:1px solid rgba(0,0,0,0.06);" href="networking.html">Networking</a>
+      </div>
+    </div>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="impact.html">OUR IMPACT</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
+  </div>
+  <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+  </button>
+</nav>
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="networking.html">Networking</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="impact.html">Our Impact</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
+</div>
+
+<div class="max-w-[1400px] mx-auto min-h-screen">
+
+  <!-- HERO -->
+  <section class="relative min-h-[80vh] flex flex-col justify-end overflow-hidden px-6 pb-24 pt-24">
+    <div class="absolute inset-0 pointer-events-none">
+      <img alt="Networking event with live gameshow software" class="w-full h-full object-cover" src="images/operation-setup.jpg" style="object-position:center 30%;"/>
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.97) 0%,rgba(0,0,0,0.7) 50%,rgba(0,0,0,0.5) 100%);"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">For Co-Working Spaces</p>
+      <h1 class="font-display text-5xl md:text-7xl text-white leading-tight font-bold italic mb-8">Networking</h1>
+      <p class="font-body text-xl md:text-2xl text-white/80 mb-6 max-w-2xl font-light leading-relaxed" style="border-top:1px solid rgba(201,168,76,0.5); border-bottom:1px solid rgba(201,168,76,0.5); padding:1.5rem 0;">Light-touch software and equipment that gives people a natural reason to connect. No host on stage. No structured format. Just the right conditions for conversation to happen on its own.</p>
+      <p class="font-label text-xs uppercase tracking-widest mb-8" style="color:rgba(201,168,76,0.8);">We typically book 4–6 weeks in advance. Popular dates fill quickly.</p>
+      <a href="contact.html" class="primary-button px-12 py-5 text-sm">REQUEST A PROPOSAL</a>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="container mx-auto grid md:grid-cols-2 gap-20 items-start max-w-7xl">
+      <div class="space-y-6">
+        <p class="font-label text-xs uppercase tracking-[0.25em]" style="color:#C9A84C;">The Problem</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink leading-tight font-bold">People in the Same Room Who Have Never Spoken.</h2>
+        <div class="font-body text-ink-muted leading-relaxed text-lg gold-rule-v pl-6 space-y-4">
+          <p>Most networking events put people in a room, hand them a drink, and hope for the best. The conversations that happen are the same ones that always happen — and the people who don't know anyone leave having still not met anyone.</p>
+          <p>Our Networking format changes the dynamic. Light-touch software and gaming equipment are placed around the room. People engage with what catches their eye, find themselves competing with someone they have never met, and suddenly have a real reason to talk.</p>
+          <p>There is no host on stage, no structured programme, no awkward icebreakers. The format creates the conditions. The connections happen naturally.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(201,168,76,0.25); overflow:hidden; max-height:600px;">
+        <img loading="lazy" alt="Guests connecting at a networking event" class="w-full object-cover" src="images/tce-20.jpg" style="object-position:center 30%; height:600px;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUNDS -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-6">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">The Software</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold mb-4">Five Formats That Start Conversations.</h2>
+      </div>
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <p class="font-body text-lg text-ink-muted">Our software runs on screens around the room. People drift toward what interests them, find themselves competing with someone they have never met, and suddenly have something to talk about.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="p-8 card-border card-hover" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">01</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Trivia Feud</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">We surveyed 100 people — teams compete to match the most popular answers, not the correct ones. The host reveals answers one by one as teams rack up matches. Strategy over knowledge. The best round for generating crowd noise.</p>
+        </div>
+
+        <div class="p-8 card-border card-hover" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">02</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Bingo</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Every player gets a personalised bingo card on their phone. Questions or music clips are called and players mark off matches in real time. First to complete a line calls it. Works as trivia, music, or a mix of both.</p>
+        </div>
+
+        <div class="p-8 card-border card-hover" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">03</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Fastest Finger</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">A question goes up, buzzers go live, first to hit theirs gets to answer. A wrong answer hands the question to your opponents — so certainty matters as much as speed. The format that produces the most electric single moments of the show.</p>
+        </div>
+
+        <div class="p-8 card-border card-hover" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">04</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Word Games</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">A Wheel of Fortune-style format played on screen. Hidden words are revealed letter by letter — teams race to solve before the board is complete. Anagrams, word searches, and phrase reveals all feature. Rewards pattern recognition over trivia recall.</p>
+        </div>
+
+        <div class="p-8 card-border card-hover md:col-span-2" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">05</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Speed Trivia</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Players buzz in on colour-coded buzzers — faster answers score higher, one wrong answer ends your round. The live leaderboard keeps energy high and the format works without audio, so it never fights your venue atmosphere. Each round lasts around 45 seconds, people can float in and out freely, and no host is needed. Easy questions, competitive format. It is about speed, not being a quiz champion.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE BUZZER -->
+  <section class="py-24 px-6 relative overflow-hidden" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Included with Networking</p>
+      <h2 class="font-display text-4xl md:text-6xl text-ink font-bold mb-4">Beyond the Buzzer</h2>
+      <p class="font-body text-lg text-ink mb-14">High-end gaming stations run alongside your event — before the show, during intervals, and after. Keep the energy consistent from arrival to close.</p>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="card-border card-hover flex flex-col items-center justify-center p-5 bg-white aspect-square">
+          <span class="material-symbols-outlined text-5xl mb-3" style="color:#C9A84C;">golf_course</span>
+          <span class="font-label text-sm text-ink font-bold uppercase tracking-widest text-center">Mini Golf</span>
+        </div>
+        <div class="card-border card-hover flex flex-col items-center justify-center p-5 bg-white aspect-square">
+          <span class="material-symbols-outlined text-5xl mb-3" style="color:#C9A84C;">sports_hockey</span>
+          <span class="font-label text-sm text-ink font-bold uppercase tracking-widest text-center">Air Hockey</span>
+        </div>
+        <div class="card-border card-hover flex flex-col items-center justify-center p-5 bg-white aspect-square">
+          <span class="material-symbols-outlined text-5xl mb-3" style="color:#C9A84C;">sports_soccer</span>
+          <span class="font-label text-sm text-ink font-bold uppercase tracking-widest text-center">Table Football</span>
+        </div>
+        <div class="card-border card-hover flex flex-col items-center justify-center p-5 bg-white aspect-square">
+          <span class="material-symbols-outlined text-5xl mb-3" style="color:#C9A84C;">joystick</span>
+          <span class="font-label text-sm text-ink font-bold uppercase tracking-widest text-center">Nintendo Switch</span>
+        </div>
+        <div class="card-border card-hover flex flex-col items-center justify-center p-5 bg-white aspect-square">
+          <span class="material-symbols-outlined text-5xl mb-3" style="color:#C9A84C;">align_items_stretch</span>
+          <span class="font-label text-sm text-ink font-bold uppercase tracking-widest text-center">Giant Jenga</span>
+        </div>
+        <div class="card-border card-hover flex flex-col items-center justify-center p-5 bg-white aspect-square">
+          <span class="material-symbols-outlined text-5xl mb-3" style="color:#C9A84C;">target</span>
+          <span class="font-label text-sm text-ink font-bold uppercase tracking-widest text-center">Cornhole</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS INCLUDED -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Every Booking</p>
+        <h2 class="font-display text-4xl md:text-6xl text-ink font-bold">What Is Included</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">record_voice_over</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Professional Host and Co-Host</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">Two experienced facilitators who control the energy, manage the pace, and ensure nothing is left to chance.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">electric_bolt</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Licensed Buzzers and Live Scoring</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">Broadcast-quality technology. Every answer tracked live. Every score displayed in real time on screen.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">layers</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Content Tailored to Your Group</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">We take a brief before the event. You do not receive a generic format.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">settings_input_component</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Full Setup and Breakdown</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">We arrive, build it, run it, and pack it down. Nothing is required from you or your team on the day.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">sports_esports</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Gaming Stations</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">High-end gaming stations set up alongside your event. Run them before the show, during intervals, or after to keep the energy going all night.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6 pl-6 py-6 gold-rule-v">
+          <span class="material-symbols-outlined text-4xl" style="color:#C9A84C;">music_note</span>
+          <div>
+            <h4 class="font-display text-lg text-ink mb-2 font-bold">Resident DJ</h4>
+            <p class="font-body text-ink-muted text-sm leading-relaxed">A professional DJ who sets the atmosphere from arrival, fills the gaps between rounds, and keeps the energy alive through to the end of the night.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="text-center mb-16">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">What Clients Say</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="p-10 flex flex-col justify-between card-border bg-white card-hover">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"We needed something that would bring together staff from completely different departments who rarely interact. The energy in the room was something I have not seen at any of our previous events."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">LH</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Leanne Headlam</p>
+            <p class="font-body text-xs text-ink-muted">Community Lead — NHS</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-10 flex flex-col justify-between card-border bg-white card-hover">
+        <p class="font-display text-xl text-ink leading-relaxed italic mb-10">"Our team works in high-pressure environments every day. This was the first event where I watched them properly switch off and enjoy themselves. People are still talking about it two months later."</p>
+        <div class="flex items-center gap-5 pt-6" style="border-top:1px solid rgba(201,168,76,0.2);">
+          <div class="w-12 h-12 flex items-center justify-center font-label font-bold text-sm" style="border:1px solid rgba(201,168,76,0.5); color:#C9A84C; background:rgba(201,168,76,0.06);">SP</div>
+          <div>
+            <p class="font-label text-sm font-bold text-ink">Shannen Prempeh</p>
+            <p class="font-body text-xs text-ink-muted">Founder — HB Forces</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Common Questions</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-0">
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How long does the evening run?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">The show itself runs approximately 90 minutes. Gaming stations can run before and after for as long as you need. A typical Networking evening runs three to four hours in total, including arrival, the show, and post-show gaming time.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">What does the venue need to provide?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">A screen or projector, power sources, and enough floor space for the gaming stations and team tables. We bring everything else — all equipment, buzzers, laptop, speakers, and content. For DJ bookings, a reasonable acoustic space and a power source are all that is needed.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">Can we choose the music for the DJ?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">Yes. We take a brief before the event covering preferred genres, any tracks you want included, and anything you want to avoid. The DJ is fully briefed on the tone and format of the evening before arrival.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">Can we have gaming stations without the show?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">No. Gaming stations and the DJ are included as part of the full Networking package. The show is always the centrepiece, and the gaming stations and DJ run alongside it to create the complete evening experience.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">How far in advance should we book?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">We recommend 4–6 weeks. For larger groups of 100 or more, 8 weeks gives us enough time to prepare the right content. November and December dates fill fastest — if you are planning a Christmas party, get in touch as early as possible.</p>
+        </details>
+        <details class="group" style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <summary class="py-8 cursor-pointer list-none flex justify-between items-center">
+            <h4 class="font-display text-xl text-ink font-bold">What is a typical total cost for a Networking evening?</h4>
+            <span class="font-label text-ink-muted text-xl transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="font-body text-ink-muted leading-relaxed pb-8">Gaming stations and a resident DJ are included in every Networking package. A group of 60 people would cost £2,250  — everything included. Every booking is quoted individually — send us your date and group size and we will confirm the exact figure within one working day.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-0" style="height:500px;">
+    <div class="overflow-hidden h-full">
+      <img loading="lazy" alt="Guest playing air hockey at gaming station" class="w-full h-full object-cover" src="images/beyond-buzzer.jpg"/>
+    </div>
+    <div class="overflow-hidden h-full">
+      <img loading="lazy" alt="Guests reacting during the event" class="w-full h-full object-cover" src="images/about-built.jpg"/>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-28 text-center px-6" style="background:#0D1B2A;">
+    <div class="container mx-auto max-w-3xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Book Networking</p>
+      <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">Tell Us Your Date.<br/>We Handle the Rest.</h2>
+      <p class="font-body text-xl mb-4 text-white/60">Send us your event date and group size. We respond within one working day.</p>
+      <p class="font-label text-xs uppercase tracking-widest mb-12" style="color:rgba(201,168,76,0.6);">We typically book 4–6 weeks in advance. Popular dates fill quickly.</p>
+      <a href="contact.html" class="primary-button px-16 py-5 text-sm">REQUEST A PROPOSAL</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
+      <div>
+        <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>
+        <p class="font-body text-xs text-white/30 tracking-wider">© 2026 On The Buzzer. Afterglow Ltd. Company No. 16506837.</p>
+      </div>
+      <div class="flex gap-12">
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="/cdn-cgi/l/email-protection#d5bcbbb3ba95babba1bdb0b7a0afafb0a7fbb6bafba0be">Email Us</a>
+      </div>
+      <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
+ 
