@@ -32,10 +32,10 @@
 </style>
 
   <style>
-    /* Smooth scroll */
+    /* 2. Smooth scroll */
     html { scroll-behavior: smooth; }
 
-    /* Card hover lift */
+    /* 4. Card hover lift */
     .card-hover {
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
@@ -44,7 +44,7 @@
       box-shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
 
-    /* Image zoom on hover */
+    /* 5. Image zoom on hover */
     .img-zoom { overflow: hidden; }
     .img-zoom img {
       transition: transform 0.5s ease;
@@ -53,7 +53,7 @@
       transform: scale(1.04);
     }
 
-    /* Gold rule reveal */
+    /* 6. Gold rule reveal */
     .gold-rule-v {
       border-left: 0px solid rgba(201,168,76,0.6);
       padding-left: 1.5rem;
@@ -73,7 +73,7 @@
       height: 100%;
     }
 
-    /* Page transition */
+    /* 7. Page transition */
     body {
       animation: pageFadeIn 0.4s ease forwards;
     }
@@ -138,7 +138,7 @@
 
   <!-- WHAT IT IS -->
   <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="container mx-auto grid md:grid-cols-2 gap-20 items-center max-w-7xl">
+    <div class="container mx-auto grid md:grid-cols-2 gap-20 items-start max-w-7xl">
       <div class="space-y-6">
         <p class="font-label text-xs uppercase tracking-[0.25em]" style="color:#C9A84C;">The Problem</p>
         <h2 class="font-display text-4xl md:text-5xl text-ink leading-tight font-bold">People in the Same Room Who Have Never Spoken.</h2>
@@ -148,8 +148,8 @@
           <p>There is no host on stage, no structured programme, no awkward icebreakers. The format creates the conditions. The connections happen naturally.</p>
         </div>
       </div>
-      <div class="img-zoom" style="border:1px solid rgba(201,168,76,0.25); overflow:hidden; aspect-ratio:3/2;">
-        <img loading="lazy" alt="Guests reacting around the buzzer table during a Networking event" class="w-full h-full object-cover" src="images/networking-crowd.jpg" style="object-position:center center;"/>
+      <div style="border:1px solid rgba(201,168,76,0.25); overflow:hidden; max-height:600px;">
+        <img loading="lazy" alt="Guests connecting at a networking event" class="w-full object-cover" src="images/tce-20.jpg" style="object-position:center 30%; height:600px;"/>
       </div>
     </div>
   </section>
@@ -166,15 +166,10 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-        <div class="card-border card-hover md:col-span-2 grid md:grid-cols-2 gap-0 overflow-hidden" style="background:#FFFFFF;">
-          <div class="img-zoom h-64 md:h-auto">
-            <img loading="lazy" alt="Live leaderboard displayed on screen during Speed Trivia" class="w-full h-full object-cover" src="images/speed-trivia-leaderboard.jpg" style="object-position:center center;"/>
-          </div>
-          <div class="p-8 flex flex-col justify-center">
-            <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">01</p>
-            <h4 class="font-display text-xl text-ink font-bold mb-3">Speed Trivia</h4>
-            <p class="font-body text-sm text-ink-muted leading-relaxed">Teams buzz in on colour-coded buzzers — faster answers score more points, but one wrong answer ends the round. The live leaderboard is visible to the whole room, keeping energy high throughout. Each round lasts around 45 seconds, people can rotate in and out freely, and no host is needed. Works without audio so it never competes with your venue atmosphere. Easy questions, competitive format — it is about speed, not general knowledge.</p>
-          </div>
+        <div class="p-8 card-border card-hover md:col-span-2 text-center" style="background:#FFFFFF;">
+          <p class="font-label text-[10px] uppercase tracking-[0.2em] mb-3" style="color:#C9A84C;">01</p>
+          <h4 class="font-display text-xl text-ink font-bold mb-3">Speed Trivia</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed max-w-2xl mx-auto">Teams buzz in on colour-coded buzzers — faster answers score more points, but one wrong answer ends the round. The live leaderboard is visible to the whole room, keeping energy high throughout. Each round lasts around 45 seconds, people can rotate in and out freely, and no host is needed. Works without audio so it never competes with your venue atmosphere. Easy questions, competitive format — it is about speed, not general knowledge.</p>
         </div>
 
         <div class="p-8 card-border card-hover" style="background:#FFFFFF;">
@@ -407,13 +402,7 @@
       </div>
       <div class="flex gap-12">
         <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
-        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:hello@onthebuzzer.co.uk">Email Us</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="/cdn-cgi/l/email-protection#d5bcbbb3ba95babba1bdb0b7a0afafb0a7fbb6bafba0be">Email Us</a>
       </div>
       <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
-    </div>
-  </footer>
-
-</div>
-
-</body>
-</html>
+ 
