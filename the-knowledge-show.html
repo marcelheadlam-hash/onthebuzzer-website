@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Knowledge Show | On The Buzzer</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<meta name="description" content="Turn your all-hands, training or values rollout into a live competition. People compete over your message and actually remember it. In person, virtual or hybrid."/>
+<meta property="og:title" content="The Knowledge Show | On The Buzzer"/>
+<meta property="og:description" content="We turn the presentation you were going to give into a live competition, so your message actually sticks."/>
+<meta property="og:type" content="website"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { "gold":"#C9A84C","ink":"#0A0A0A","ink-muted":"#6B6B6B","surface-warm":"#F9F8F6" },
+        fontFamily: { "display":["Playfair Display","serif"],"body":["Inter","sans-serif"],"label":["Space Grotesk","sans-serif"] },
+      },
+    },
+  }
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    body { @apply font-body overflow-x-hidden; background-color:#FFFFFF; color:#0A0A0A; }
+    h1,h2,h3,h4,h5,h6 { font-family:"Playfair Display",serif; }
+  }
+  .card-border { border:1px solid rgba(0,0,0,0.08); }
+  .gold-card-border { border:1px solid rgba(201,168,76,0.35); }
+  .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
+  .primary-button:hover { background-color:#B8962E; }
+  .outline-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block bg-transparent; border:1px solid rgba(201,168,76,0.7); color:#C9A84C; }
+  .outline-button:hover { border-color:#C9A84C; background:rgba(201,168,76,0.06); }
+  .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
+</style>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    body { animation: pageFadeIn 0.4s ease forwards; }
+    @keyframes pageFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Knowledge Show",
+  "provider": { "@type": "Organization", "name": "On The Buzzer", "url": "https://onthebuzzer.co.uk", "email": "info@onthebuzzer.co.uk", "legalName": "Afterglow Ltd" },
+  "areaServed": "United Kingdom",
+  "description": "A hosted format that turns a company's own presentation content into a live competition to improve attention and retention, delivered in person, virtually or hybrid."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is The Knowledge Show?", "acceptedAnswer": { "@type": "Answer", "text": "The Knowledge Show is a format from On The Buzzer that turns your own presentation or key messages into a live, hosted competition. Instead of presenting information, your team competes over it, which makes far more of it stick." } },
+    { "@type": "Question", "name": "Why does it help people remember the content?", "acceptedAnswer": { "@type": "Answer", "text": "It uses retrieval practice: people remember what they have to pull back out of memory, not what they simply hear. The same principle underpins learning and development tools, from language apps to professional training." } },
+    { "@type": "Question", "name": "What do we need to provide?", "acceptedAnswer": { "@type": "Answer", "text": "Just the deck you were going to present, or a few key points your team needs to remember. On The Buzzer turns those into rounds and writes them so the right answer is the one worth keeping." } },
+    { "@type": "Question", "name": "What is it useful for?", "acceptedAnswer": { "@type": "Answer", "text": "All-hands and town halls, onboarding, values and culture rollouts, product and sales training, compliance and conference content. It works best wherever a message usually gets forgotten soon after the room empties." } },
+    { "@type": "Question", "name": "Does it work for remote or hybrid teams?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It runs in person, online or hybrid, and is often most useful when the audience is hardest to hold over a screen. Remote players compete on the same footing as everyone else." } },
+    { "@type": "Question", "name": "Will turning it into a game undermine a serious message?", "acceptedAnswer": { "@type": "Answer", "text": "No, as long as the competition is built around the content rather than bolted on. The message becomes the thing worth competing over, so it lands harder rather than being trivialised." } },
+    { "@type": "Question", "name": "What if our material is genuinely dry?", "acceptedAnswer": { "@type": "Answer", "text": "All the better. Dry content is precisely what gets forgotten, so it has the most to gain. We have turned pension changes, safety procedures and brand guidelines into rounds people argued over. Your subject will be fine." } },
+    { "@type": "Question", "name": "What if we don't have a polished deck?", "acceptedAnswer": { "@type": "Answer", "text": "You do not need one. A few bullet points and a clear sense of what really matters is plenty for us to build a session around." } }
+  ]
+}
+</script>
+</head>
+<body class="selection:bg-gold selection:text-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-5 glass-nav" style="border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a href="index.html" class="font-display text-xl font-bold tracking-wide text-ink italic">On The Buzzer</a>
+  <div class="hidden md:flex gap-10 items-center">
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
+    <div class="relative group">
+      <button class="font-label text-xs font-bold uppercase tracking-widest pb-0.5 flex items-center gap-1" style="color:#C9A84C; border-bottom:1px solid #C9A84C;">EXPERIENCES <span class="text-[8px]">▾</span></button>
+      <div class="absolute top-full left-0 pt-2 w-64 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="the-gameshow.html">The Gameshow</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="the-knowledge-show.html">The Knowledge Show</a>
+      </div>
+    </div>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="impact.html">OUR IMPACT</a>
+    <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="contact.html">CONTACT US</a>
+  </div>
+  <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+    <span class="w-6 h-px block" style="background:#0D1B2A;"></span>
+  </button>
+</nav>
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="the-gameshow.html">The Gameshow</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="the-knowledge-show.html">The Knowledge Show</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="impact.html">Our Impact</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="contact.html">Contact Us</a>
+</div>
+
+<div class="max-w-[1400px] mx-auto min-h-screen">
+
+  <!-- HERO -->
+  <section class="relative min-h-[80vh] flex flex-col justify-end overflow-hidden px-6 pb-20 pt-32">
+    <div class="absolute inset-0 pointer-events-none">
+      <img alt="A team competing over company content at a live event" class="w-full h-full object-cover" src="images/operation-setup.jpg" style="object-position:center 30%;"/>
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.45) 55%,rgba(0,0,0,0.2) 100%);"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Knowledge Show</p>
+      <h1 class="font-display text-5xl md:text-7xl text-white leading-tight font-bold italic mb-8">Make Your Content<br/>the Main Event</h1>
+      <p class="font-body text-xl md:text-2xl text-white/80 max-w-2xl font-light leading-relaxed">We turn your all-hands, training or conference content into a live competition: real participation, sharper recall, and a room that leans in and stays there.</p>
+    </div>
+  </section>
+
+  <!-- THE MECHANISM -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">Why It Works</p>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-10 leading-tight">Recall Beats Repetition Every Time</h2>
+      <div class="font-body text-lg text-ink-muted leading-relaxed space-y-6">
+        <p>The reason it sticks is not the production. It is retrieval practice: we hold on to what we have to pull back out of our own heads far better than anything we simply take in. Put a fact behind a buzzer and a little friendly pressure, and it lodges.</p>
+        <p>It is not a gimmick. Retrieval practice is a science-backed methodology built into every learning and development tool, from the language app on your phone to the way pilots and surgeons are trained. We have simply built a live show around it.</p>
+        <p>It also earns attention rather than asking for it. Attention is scarce and people are flooded with information, so the moment your content becomes the thing they are competing to get right, it stops being background and becomes the point. Competition is the pattern interrupt.</p>
+        <p>And it changes the room. People who would never speak up in a town hall will not put the buzzer down, which gives your quieter half a way in and hands you a clear read on exactly what has landed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE BUILD IT -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">How We Build It</p>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-10 leading-tight">You Send the Material, We Do the Clever Part</h2>
+      <div class="font-body text-lg text-ink-muted leading-relaxed space-y-6">
+        <p>There is nothing you need to dress up first. Send us the deck you were already going to present, or just the handful of things people genuinely need to walk away knowing. That is enough for us to work from.</p>
+        <p>We turn your messages into rounds and write them so the right answer is the one you wanted remembered. On the day, our host runs the whole thing live. You can stand up as the expert when it matters, or sit back and let the format carry the message for you. Either way, the work on your side is close to nothing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT'S GOOD FOR -->
+  <section class="py-24 px-6" style="background:#F9F8F6; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mb-14">
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Where It Earns Its Keep</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic leading-tight">The Sessions People Usually Dread</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <h3 class="font-display text-xl text-ink font-bold mb-2">All-Hands &amp; Town Halls</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Get the quarter's numbers and priorities to land without the glaze setting in by slide six.</p>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <h3 class="font-display text-xl text-ink font-bold mb-2">Onboarding &amp; Induction</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">New starters who still remember week one when they reach week four.</p>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <h3 class="font-display text-xl text-ink font-bold mb-2">Values &amp; Culture</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">The fastest way to stop a values deck quietly becoming wallpaper.</p>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <h3 class="font-display text-xl text-ink font-bold mb-2">Product &amp; Sales Training</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Test recall in the room, while you can still fix the gaps, rather than out in the field.</p>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <h3 class="font-display text-xl text-ink font-bold mb-2">Compliance</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">The rare occasion "mandatory" and "people actually enjoyed it" end up in the same sentence.</p>
+        </div>
+        <div class="p-8 card-border" style="background:#FFFFFF;">
+          <h3 class="font-display text-xl text-ink font-bold mb-2">Conference Content</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">A keynote your delegates can still quote back to each other over lunch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Answers</p>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-12 leading-tight">Common Questions</h2>
+      <div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">What is The Knowledge Show?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">The Knowledge Show is a format from On The Buzzer that turns your own presentation or key messages into a live, hosted competition. Instead of presenting information, your team competes over it, which makes far more of it stick.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">Why does it help people remember the content?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">It uses retrieval practice: people remember what they have to pull back out of memory, not what they simply hear. The same principle underpins learning and development tools, from language apps to professional training.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">What do we need to provide?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">Just the deck you were going to present, or a few key points your team needs to remember. On The Buzzer turns those into rounds and writes them so the right answer is the one worth keeping.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">What is it useful for?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">All-hands and town halls, onboarding, values and culture rollouts, product and sales training, compliance and conference content. It works best wherever a message usually gets forgotten soon after the room empties.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">Does it work for remote or hybrid teams?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">Yes. It runs in person, online or hybrid, and is often most useful when the audience is hardest to hold over a screen. Remote players compete on the same footing as everyone else.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">Will turning it into a game undermine a serious message?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">No, as long as the competition is built around the content rather than bolted on. The message becomes the thing worth competing over, so it lands harder rather than being trivialised.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">What if our material is genuinely dry?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">All the better. Dry content is precisely what gets forgotten, so it has the most to gain. We have turned pension changes, safety procedures and brand guidelines into rounds people argued over. Your subject will be fine.</p>
+        </div>
+        <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
+          <h3 class="font-display text-xl text-ink font-bold mb-3">What if we don't have a polished deck?</h3>
+          <p class="font-body text-ink-muted leading-relaxed">You do not need one. A few bullet points and a clear sense of what really matters is plenty for us to build a session around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER OPTION -->
+  <section class="py-20 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-body text-lg text-ink-muted leading-relaxed">No message to land, just a great night to put on? Then you want pure entertainment, and that is <a href="the-gameshow.html" class="font-semibold" style="color:#C9A84C; border-bottom:1px solid rgba(201,168,76,0.5);">The Gameshow</a>.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-28 text-center px-6" style="background:#0D1B2A;">
+    <div class="container mx-auto max-w-3xl">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:rgba(201,168,76,0.7);">Get In Touch</p>
+      <h2 class="font-display text-5xl md:text-7xl mb-8 text-white font-bold italic leading-tight">Make Your Message Stick</h2>
+      <p class="font-body text-xl mb-12 text-white/60">Tell us what your team needs to walk away knowing. We respond within one working day.</p>
+      <a href="contact.html" class="primary-button px-16 py-5 text-sm">REQUEST A PROPOSAL</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="p-16" style="background:#0D1B2A; border-top:1px solid rgba(201,168,76,0.15);">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
+      <div>
+        <div class="font-display text-2xl font-bold mb-4 italic" style="color:#C9A84C;">On The Buzzer</div>
+        <p class="font-body text-xs text-white/30 tracking-wider">© 2026 On The Buzzer. Afterglow Ltd. Company No. 16506837.</p>
+      </div>
+      <div class="flex gap-12">
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
+      </div>
+      <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
+    </div>
+  </footer>
+
+</div>
+
+</body></html>

@@ -25,11 +25,11 @@
   .primary-button { @apply font-label font-bold uppercase tracking-widest transition-all duration-200 inline-block; background-color:#C9A84C; color:#FFFFFF; }
   .primary-button:hover { background-color:#B8962E; }
   .glass-nav { background:rgba(255,255,255,0.95); backdrop-filter:blur(20px); }
-  input, textarea {
+  input, textarea, select {
     @apply font-body text-ink w-full px-0 py-3 outline-none transition-all duration-200 bg-transparent;
     border-bottom:1px solid rgba(0,0,0,0.15); border-top:none; border-left:none; border-right:none; border-radius:0;
   }
-  input:focus, textarea:focus { border-bottom-color:#C9A84C; }
+  input:focus, textarea:focus, select:focus { border-bottom-color:#C9A84C; }
   input::placeholder, textarea::placeholder { color:rgba(0,0,0,0.3); font-size:0.875rem; }
   input[type="date"]::-webkit-calendar-picker-indicator { opacity:0.4; }
 </style>
@@ -96,9 +96,9 @@
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="index.html">HOME</a>
     <div class="relative group">
       <button class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all flex items-center gap-1">EXPERIENCES <span class="text-[8px]">▾</span></button>
-      <div class="absolute top-full left-0 pt-2 w-52 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
-        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="team-building.html">Team Building</a>
-        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="networking.html">Networking</a>
+      <div class="absolute top-full left-0 pt-2 w-64 hidden group-hover:flex flex-col bg-white shadow-lg" style="border:1px solid rgba(0,0,0,0.08);">
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" href="the-gameshow.html">The Gameshow</a>
+        <a class="font-label text-xs font-bold uppercase tracking-widest px-5 py-4 text-ink-muted hover:text-ink hover:bg-surface-warm transition-all" style="border-top:1px solid rgba(0,0,0,0.06);" href="the-knowledge-show.html">The Knowledge Show</a>
       </div>
     </div>
     <a class="font-label text-xs font-bold uppercase tracking-widest text-ink-muted hover:text-ink transition-all" href="about.html">ABOUT US</a>
@@ -113,8 +113,8 @@
 </nav>
 <div id="mobile-menu" class="hidden fixed top-[73px] left-0 w-full z-40 flex flex-col px-10 py-8 gap-6 md:hidden" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08);">
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="index.html">Home</a>
-  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="team-building.html">Team Building</a>
-  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="networking.html">Networking</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="the-gameshow.html">The Gameshow</a>
+  <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="the-knowledge-show.html">The Knowledge Show</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="about.html">About Us</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest text-ink" href="impact.html">Our Impact</a>
   <a class="font-label text-sm font-bold uppercase tracking-widest" style="color:#C9A84C;" href="contact.html">Contact Us</a>
@@ -155,6 +155,15 @@
           <input id="size" name="group_size" placeholder="Number of guests" required type="number" min="20"/>
         </div>
         <div class="flex flex-col space-y-2 md:col-span-2">
+          <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="experience">Which experience? <span style="color:#C9A84C;">*</span></label>
+          <select id="experience" name="experience" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="The Gameshow">The Gameshow</option>
+            <option value="The Knowledge Show">The Knowledge Show</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="flex flex-col space-y-2 md:col-span-2">
           <label class="font-label text-[10px] uppercase tracking-[0.2em] text-ink-muted" for="message">Anything else we should know? <span style="color:#C9A84C;">*</span></label>
           <textarea id="message" name="message" placeholder="Describe your event requirements" required rows="5"></textarea>
         </div>
@@ -182,6 +191,10 @@
       </div>
       <div class="flex gap-12">
         <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="https://www.linkedin.com/company/onthebuzzer/" target="_blank">LinkedIn</a>
-        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="/cdn-cgi/l/email-protection#fb92959d94bb94958f939e998e81819e89d59894d58e90">Email Us</a>
+        <a class="font-label text-xs text-white/35 hover:text-white uppercase tracking-widest transition-colors" href="mailto:info@onthebuzzer.co.uk">Email Us</a>
       </div>
       <div class="font-label text-xs text-white/25 uppercase tracking-widest">© 2026 On The Buzzer</div>
+    </div>
+  </footer>
+</div>
+</body></html>
