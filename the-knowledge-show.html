@@ -38,6 +38,9 @@
     html { scroll-behavior: smooth; }
     .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .img-zoom { overflow: hidden; }
+    .img-zoom img { transition: transform 0.5s ease; }
+    .img-zoom:hover img { transform: scale(1.04); }
     body { animation: pageFadeIn 0.4s ease forwards; }
     @keyframes pageFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
@@ -61,7 +64,7 @@
     { "@type": "Question", "name": "Why does it help people remember the content?", "acceptedAnswer": { "@type": "Answer", "text": "It uses retrieval practice: people remember what they have to pull back out of memory, not what they simply hear. The same principle underpins learning and development tools, from language apps to professional training." } },
     { "@type": "Question", "name": "What do we need to provide?", "acceptedAnswer": { "@type": "Answer", "text": "Just the deck you were going to present, or a few key points your team needs to remember. On The Buzzer turns those into rounds and writes them so the right answer is the one worth keeping." } },
     { "@type": "Question", "name": "What is it useful for?", "acceptedAnswer": { "@type": "Answer", "text": "All-hands and town halls, onboarding, values and culture rollouts, product and sales training, compliance and conference content. It works best wherever a message usually gets forgotten soon after the room empties." } },
-    { "@type": "Question", "name": "Does it work for remote or hybrid teams?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It runs in person, online or hybrid, and is often most useful when the audience is hardest to hold over a screen. Remote players compete on the same footing as everyone else." } },
+    { "@type": "Question", "name": "Does it work for remote or hybrid teams?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We run it in person, fully online, or as a hybrid. Remote players take part on exactly the same terms as everyone in the room: the same questions, the same scoring, and the same chance to win." } },
     { "@type": "Question", "name": "Will turning it into a game undermine a serious message?", "acceptedAnswer": { "@type": "Answer", "text": "No, as long as the competition is built around the content rather than bolted on. The message becomes the thing worth competing over, so it lands harder rather than being trivialised." } },
     { "@type": "Question", "name": "What if our material is genuinely dry?", "acceptedAnswer": { "@type": "Answer", "text": "All the better. Dry content is precisely what gets forgotten, so it has the most to gain. We have turned pension changes, safety procedures and brand guidelines into rounds people argued over. Your subject will be fine." } },
     { "@type": "Question", "name": "What if we don't have a polished deck?", "acceptedAnswer": { "@type": "Answer", "text": "You do not need one. A few bullet points and a clear sense of what really matters is plenty for us to build a session around." } }
@@ -133,12 +136,17 @@
 
   <!-- HOW WE BUILD IT -->
   <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="max-w-3xl mx-auto">
-      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">How We Build It</p>
-      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-10 leading-tight">You Send the Material, We Do the Clever Part</h2>
-      <div class="font-body text-lg text-ink-muted leading-relaxed space-y-6">
-        <p>There is nothing you need to dress up first. Send us the deck you were already going to present, or just the handful of things people genuinely need to walk away knowing. That is enough for us to work from.</p>
-        <p>We turn your messages into rounds and write them so the right answer is the one you wanted remembered. On the day, our host runs the whole thing live. You can stand up as the expert when it matters, or sit back and let the format carry the message for you. Either way, the work on your side is close to nothing.</p>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">How We Build It</p>
+        <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-10 leading-tight">You Send the Material, We Do the Clever Part</h2>
+        <div class="font-body text-lg text-ink-muted leading-relaxed space-y-6">
+          <p>There is nothing you need to dress up first. Send us the deck you were already going to present, or just the handful of things people genuinely need to walk away knowing. That is enough for us to work from.</p>
+          <p>We turn your messages into rounds and write them so the right answer is the one you wanted remembered. On the day, our host runs the whole thing live. You can stand up as the expert when it matters, or sit back and let the format carry the message for you. Either way, the work on your side is close to nothing.</p>
+        </div>
+      </div>
+      <div class="img-zoom" style="height:520px; border:1px solid rgba(0,0,0,0.08);">
+        <img loading="lazy" alt="A team together at an On The Buzzer live event" class="w-full h-full object-cover" src="images/networking copy.jpg" style="object-position:center 35%;"/>
       </div>
     </div>
   </section>
@@ -203,7 +211,7 @@
         </div>
         <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
           <h3 class="font-display text-xl text-ink font-bold mb-3">Does it work for remote or hybrid teams?</h3>
-          <p class="font-body text-ink-muted leading-relaxed">Yes. It runs in person, online or hybrid, and is often most useful when the audience is hardest to hold over a screen. Remote players compete on the same footing as everyone else.</p>
+          <p class="font-body text-ink-muted leading-relaxed">Yes. We run it in person, fully online, or as a hybrid. Remote players take part on exactly the same terms as everyone in the room: the same questions, the same scoring, and the same chance to win.</p>
         </div>
         <div class="py-7" style="border-top:1px solid rgba(0,0,0,0.08);">
           <h3 class="font-display text-xl text-ink font-bold mb-3">Will turning it into a game undermine a serious message?</h3>
