@@ -145,8 +145,8 @@
       <h1 class="font-display text-5xl md:text-7xl text-white leading-tight font-bold italic">When the Format is Right,<br/>Everyone Connects</h1>
     </div>
     <div class="relative z-10 text-center w-full">
-      <p class="font-body text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed" style="border-top:1px solid rgba(201,168,76,0.5); border-bottom:1px solid rgba(201,168,76,0.5); padding:1.5rem 0;">Gameshow experiences built around connection and competition, delivered in person or virtually to your team.</p>
-      <a href="contact.html" class="primary-button px-12 py-5 text-sm">REQUEST A PROPOSAL</a>
+      <p class="font-body text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed" style="border-top:1px solid rgba(201,168,76,0.5); border-bottom:1px solid rgba(201,168,76,0.5); padding:1.5rem 0;">Hosted gameshows that get your whole team competing, laughing and actually talking to each other. In person or online, for groups of twenty to three hundred and beyond.</p>
+      <a href="contact.html" class="primary-button px-12 py-5 text-sm">GET MY PROPOSAL</a>
     </div>
   </section>
 
@@ -187,14 +187,41 @@
     </div>
   </section>
 
+  <!-- VIDEO -->
+  <section class="px-6 py-20" style="background:#0A0A0A;">
+    <div class="max-w-5xl mx-auto">
+      <p class="font-label text-xs uppercase tracking-[0.25em] mb-6 text-center" style="color:#C9A84C;">See It In Action</p>
+      <div class="img-zoom relative" style="border:1px solid rgba(201,168,76,0.25);">
+        <video id="otb-video" class="w-full h-auto block" autoplay muted loop playsinline preload="metadata" poster="images/why-gameshow.jpg">
+          <source src="images/website-video.mp4" type="video/mp4"/>
+          Your browser does not support video playback.
+        </video>
+        <button id="otb-video-sound" type="button" aria-label="Turn sound on" class="absolute bottom-4 right-4 font-label text-xs uppercase tracking-[0.2em] px-4 py-2 transition-opacity hover:opacity-90" style="background:rgba(10,10,10,0.65); color:#FFFFFF; border:1px solid rgba(201,168,76,0.5); cursor:pointer;">&#9834; Tap for sound</button>
+      </div>
+      <p class="font-label text-xs uppercase tracking-[0.25em] mt-6 text-center text-white/40">In collaboration with Afrosocial</p>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var v = document.getElementById('otb-video');
+      var b = document.getElementById('otb-video-sound');
+      if (!v || !b) return;
+      b.addEventListener('click', function () {
+        v.muted = !v.muted;
+        if (!v.muted) { v.play(); b.textContent = 'Mute'; }
+        else { b.innerHTML = '&#9834; Tap for sound'; }
+      });
+    })();
+  </script>
+
   <!-- WHY A GAMESHOW -->
   <section class="py-24 px-6" style="background:#FFFFFF;">
     <div class="container mx-auto max-w-3xl text-center">
       <p class="font-label text-xs uppercase tracking-[0.25em] mb-6" style="color:#C9A84C;">The Format</p>
       <h2 class="font-display text-4xl md:text-6xl text-ink leading-tight font-bold mb-10">Nobody Bonds Over a Buffet</h2>
       <div class="font-body text-ink-muted leading-relaxed text-xl space-y-6">
-        <p>People need something to do together. Something to compete over, something to laugh about. That is what creates a shared experience. A room and a drinks reception does not.</p>
-        <p>Competition is a universal language. The structure creates the energy, the rounds create the moments, and people connect with each other naturally, not because they have been told to, but because the format gives them a reason to.</p>
+        <p>You know how the standard work social goes. A room, a few drinks, and everyone drifting towards the same three people they already sit next to. An hour later, nothing much has changed.</p>
+        <p>Give people something to compete over and that shifts in minutes. Competition is the one language everyone in the building speaks. It hands your quieter people a way in, gives the loud ones somewhere to put it, and gets colleagues talking who would never normally cross the room. You do not have to engineer the bonding. The format does it for you.</p>
       </div>
     </div>
   </section>
@@ -215,7 +242,7 @@
         </div>
         <div class="p-10 flex flex-col flex-1">
           <h3 class="font-display text-3xl text-ink font-bold mb-4">The Gameshow</h3>
-          <p class="font-body text-ink-muted leading-relaxed mb-8">A 90-minute hosted show built on formats your guests already know: Family Fortunes/Family Feud, The Cube and Countdown. A professional host, big-screen energy, and a room that stops checking its phone.</p>
+          <p class="font-body text-ink-muted leading-relaxed mb-8">Ninety minutes of your team properly switched on. A professional host runs three rounds built on the TV formats everyone already knows, so nobody has to be talked into joining in.</p>
           <a href="the-gameshow.html" class="outline-button px-8 py-4 text-sm text-center mt-auto">LEARN MORE</a>
         </div>
       </div>
@@ -227,7 +254,7 @@
         </div>
         <div class="p-10 flex flex-col flex-1">
           <h3 class="font-display text-3xl text-ink font-bold mb-4">The Knowledge Show</h3>
-          <p class="font-body text-ink-muted leading-relaxed mb-8">We turn your all-hands, training or conference content into a live competition, so it lands with real energy in the room and the recall to match.</p>
+          <p class="font-body text-ink-muted leading-relaxed mb-8">Your all-hands, training or conference content, turned into a live competition. Your people compete over the message instead of sitting through it, so they walk out actually remembering it.</p>
           <a href="the-knowledge-show.html" class="outline-button px-8 py-4 text-sm text-center mt-auto">LEARN MORE</a>
         </div>
       </div>
@@ -239,29 +266,29 @@
   <section class="py-24 px-6" style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);">
     <div class="text-center mb-20">
       <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">The Process</p>
-      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic">How It Works</h2>
+      <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic">We Handle Everything Except the Winning</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative max-w-7xl mx-auto">
       <div class="hidden md:block absolute top-[48px] left-0 w-full h-px" style="background:rgba(201,168,76,0.2);"></div>
       <div class="flex flex-col items-center text-center relative z-10">
         <div class="w-24 h-24 mb-8 flex items-center justify-center text-3xl font-display font-black text-white" style="background:#C9A84C;">1</div>
         <h5 class="font-display text-lg text-ink font-bold mb-3">Tell Us About Your Event</h5>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Share your date, group size and what you are trying to create.</p>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">Your date, your numbers, your venue, and what you want people to walk away with. One short conversation is enough to get started.</p>
       </div>
       <div class="flex flex-col items-center text-center relative z-10">
         <div class="w-24 h-24 mb-8 flex items-center justify-center text-3xl font-display font-black text-white" style="background:#C9A84C;">2</div>
-        <h5 class="font-display text-lg text-ink font-bold mb-3">We Plan It Together</h5>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">We confirm the format, the setup and any content tailored to your group.</p>
+        <h5 class="font-display text-lg text-ink font-bold mb-3">We Build the Show Around You</h5>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">We write the rounds around your group and your message, and tailor the format to the room. You sign it off before anyone presses a buzzer.</p>
       </div>
       <div class="flex flex-col items-center text-center relative z-10">
         <div class="w-24 h-24 mb-8 flex items-center justify-center text-3xl font-display font-black text-white" style="background:#C9A84C;">3</div>
-        <h5 class="font-display text-lg text-ink font-bold mb-3">We Arrive and Run the Show</h5>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">Our host and production team handle setup and deliver a slick, professional event.</p>
+        <h5 class="font-display text-lg text-ink font-bold mb-3">We Bring the Kit and the Energy</h5>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">A professional host, the buzzers, the big screen and the live scoring, all set up and tested before your guests arrive. A co-host joins for larger groups.</p>
       </div>
       <div class="flex flex-col items-center text-center relative z-10">
         <div class="w-24 h-24 mb-8 flex items-center justify-center text-3xl font-display font-black text-white" style="background:#C9A84C;">4</div>
-        <h5 class="font-display text-lg text-ink font-bold mb-3">They Leave Talking About It</h5>
-        <p class="font-body text-sm text-ink-muted leading-relaxed">The show ends, we pack down, and your team leaves with something to talk about on Monday.</p>
+        <h5 class="font-display text-lg text-ink font-bold mb-3">Your Team Plays, You Look Good</h5>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">We run the whole thing from the front. You get the credit for the best event of the year, without spending the week worrying about it.</p>
       </div>
     </div>
   </section>
@@ -309,9 +336,9 @@
     <div class="max-w-3xl mx-auto text-center">
       <p class="font-label text-xs uppercase tracking-[0.25em] mb-4" style="color:#C9A84C;">Investment</p>
       <h2 class="font-display text-4xl md:text-5xl text-ink font-bold italic mb-8 leading-tight">Quoted Around Your Event</h2>
-      <p class="font-body text-lg text-ink-muted leading-relaxed mb-10">Every show is built for the room it is in. We quote against your group size, format and the level of customisation you want, so you only pay for the event you are actually running.</p>
-      <a href="contact.html" class="primary-button px-14 py-5 text-sm">REQUEST A PROPOSAL</a>
-      <p class="font-body text-base text-ink-muted/80 leading-relaxed mt-8 max-w-xl mx-auto">Running more than one event a year? Recurring partnerships and retainers reduce the cost per event, and we will set that out in your proposal.</p>
+      <p class="font-body text-lg text-ink-muted leading-relaxed mb-10">Every show is built for the room it is in, so we quote against your group size, format and how much you want tailored. You only pay for the event you are actually running, and the proposal lays it all out before you commit to anything. Good dates go early, especially around Christmas and year end.</p>
+      <a href="contact.html" class="primary-button px-14 py-5 text-sm">GET MY PROPOSAL</a>
+      <p class="font-body text-base text-ink-muted/80 leading-relaxed mt-8 max-w-xl mx-auto">We reply within one working day. No deposit to see a proposal, and no hard sell. Running more than one event a year brings the cost per event down, and we will set that out for you.</p>
     </div>
   </section>
 
